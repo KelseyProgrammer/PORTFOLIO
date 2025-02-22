@@ -1269,52 +1269,37 @@ input, select, textarea {
 		}
 
 /* Header */
+/* Add Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* General styles for the header */
 /* Add Poppins font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* General styles for the header */
-/* Gradient Wave Background */
-/* Gradient Wave Background */
-body {
-    background: linear-gradient(-45deg, #1a1a1a, #2c3e50, #34495e, #1a1a1a);
-    background-size: 400% 400%;
-    animation: gradientWave 15s linear infinite;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #ffffff;
-    overflow: hidden;
-    height: 100vh;
-}
-
-@keyframes gradientWave {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
-
-/* Header Styling */
 #header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
     max-width: 100%;
     height: 100vh; /* Full viewport height */
     text-align: center;
-    padding: 2rem;
-    box-sizing: border-box;
+    padding: 2rem; /* Padding for spacing */
+    box-sizing: border-box; /* Include padding in height calculation */
+    font-family: 'Poppins', sans-serif; /* Stylish modern font */
+    color: #ffffff; /* White text color */
     position: relative;
     overflow: hidden;
 }
 
-/* Glow effect for ALL text on hover */
+/* Glow effect for ALL text on hover only */
 #header *:not(.logo):hover {
     text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow effect on hover */
 }
 
-/* Logo Styling */
+/* Logo styling with 3D transformation */
 #header .logo {
     width: 5rem;
     height: 5rem;
@@ -1339,7 +1324,7 @@ body {
     text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Icon glow */
 }
 
-/* Content Styling */
+/* Content styling */
 #header .content {
     border: solid 1px #ffffff;
     border-width: 1px 0; /* Top and bottom borders */
@@ -1348,7 +1333,7 @@ body {
     padding: 1rem; /* Inner padding */
 }
 
-/* Welcome Text Styling */
+/* Welcome text styling */
 #header .content .inner h1.welcome-text {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
@@ -1364,7 +1349,7 @@ body {
     50% { transform: translateY(-10px); }
 }
 
-/* Intro Text Styling */
+/* Intro text styling */
 #header .content .inner p.intro-text {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -1379,7 +1364,7 @@ body {
     to { opacity: 1; }
 }
 
-/* CTA Text Styling */
+/* CTA text styling */
 #header .content .inner p.cta-text {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -1389,7 +1374,7 @@ body {
     animation: fade-in 2s ease-in-out 2s forwards; /* Fade in after 2 seconds */
 }
 
-/* Navigation Styling */
+/* Navigation styling */
 #header nav ul {
     display: flex;
     margin: 0;
@@ -1432,43 +1417,39 @@ body {
     transform: scale(1.05); /* Slight scale up */
 }
 
-/* Simplified Particle Animation */
-/* Simplified Particle Animation */
+/* Particle animation */
 #header::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 200%; /* Double the height for seamless scrolling */
-    background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0.05) 80%, transparent 80%, transparent);
-    background-size: 3rem 3rem; /* Size of the particles */
-    animation: moveParticles 10s linear infinite; /* Smooth, continuous animation */
+    height: 100%;
+    background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent 80%, transparent);
+    background-size: 3rem 3rem;
+    animation: moveParticles 10s linear infinite;
     z-index: -1;
-    opacity: 0.5; /* Reduce opacity for better performance */
 }
 
 @keyframes moveParticles {
-    0% { transform: translateY(0); } /* Start at the top */
-    100% { transform: translateY(-50%); } /* Move up by half the height */
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
 }
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    #header .content .inner h1.welcome-text {
-        font-size: 2.5rem; /* Smaller font size for mobile */
-    }
 
-    #header .content .inner p.intro-text {
-        font-size: 1.2rem; /* Smaller font size for mobile */
-    }
+/* Custom cursor */
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'), auto;
+}
 
-    #header .content .inner p.cta-text {
-        font-size: 1rem; /* Smaller font size for mobile */
-    }
+/* Dynamic background color change */
+#header {
+    animation: changeBackground 10s infinite alternate;
+}
 
-    #header nav ul li {
-        min-width: 8rem; /* Smaller buttons for mobile */
-    }
+@keyframes changeBackground {
+    0% { background-color: rgba(0, 0, 0, 0.8); }
+    50% { background-color: rgba(40, 40, 40, 0.8); }
+    100% { background-color: rgba(0, 0, 0, 0.8); }
 }
 /* Main */
 
@@ -1537,27 +1518,12 @@ body {
     max-width: 100%; /* Ensure images are responsive */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Rounded corners for images */
-    display: block; /* Ensure images don't have extra space below */
-    margin: 1rem auto; /* Center images */
-    width: 100%; /* Set a consistent width */
-    max-height: 400px; /* Set a reasonable maximum height */
-    object-fit: cover; /* Ensure images fill the container without distortion */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-/* Glowing Text Effect */
-#main article p,
-#main article h1,
-#main article h2,
-#main article h3 {
-    transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-#main article p:hover,
-#main article h1:hover,
-#main article h2:hover,
-#main article h3:hover {
-    color: rgba(255, 255, 255, 0.9); /* Lighten text color */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Glow effect */
+#main article img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 /* Cool Background Animation */
@@ -1587,6 +1553,20 @@ body {
 
     #main article img {
         max-width: 100%; /* Ensure images fit on smaller screens */
-        max-height: 300px; /* Adjust height for smaller screens */
     }
+}
+/* Glowing Text Effect */
+#main article p,
+#main article h1,
+#main article h2,
+#main article h3 {
+    transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#main article p:hover,
+#main article h1:hover,
+#main article h2:hover,
+#main article h3:hover {
+    color: rgba(255, 255, 255, 0.9); /* Lighten text color */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Glow effect */
 }
