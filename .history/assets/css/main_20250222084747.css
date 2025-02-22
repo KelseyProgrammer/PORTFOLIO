@@ -1560,6 +1560,12 @@ html, body {
     width: 100%; /* Set a consistent width */
     max-height: 400px; /* Set a reasonable maximum height */
     object-fit: cover; /* Ensure images fill the container without distortion */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+#main article img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow on hover */
 }
 
 /* List Styling */

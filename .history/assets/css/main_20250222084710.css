@@ -1514,6 +1514,11 @@ html, body {
     position: relative; /* For close button positioning */
 }
 
+#main article:hover {
+    transform: translateY(-10px); /* Lift article on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
+}
+
 /* Close Button Styling */
 #main article .close-btn {
     position: absolute;
@@ -1533,6 +1538,10 @@ html, body {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
+#main article .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
 
 /* Text Styling */
 #main article h2.major {
@@ -1560,6 +1569,12 @@ html, body {
     width: 100%; /* Set a consistent width */
     max-height: 400px; /* Set a reasonable maximum height */
     object-fit: cover; /* Ensure images fill the container without distortion */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+#main article img:hover {
+    transform: scale(1.05); /* Slightly enlarge image on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow on hover */
 }
 
 /* List Styling */
