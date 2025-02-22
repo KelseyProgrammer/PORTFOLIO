@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1740204555537,
@@ -12,6 +12,10 @@
                 {
                     "date": 1740204654382,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,26 +51,9 @@\n \r\n \t\t\t}).triggerHandler('resize.flexbox-fix');\r\n \r\n \t\t}\r\n-// Back to Top Button\r\n-const backToTopButton = document.getElementById('back-to-top');\r\n \r\n-// BACK TO TOP BUTTON\r\n-window.addEventListener('scroll', () => {\r\n-    if (window.scrollY > 300) {\r\n-        backToTopButton.classList.add('visible');\r\n-    } else {\r\n-        backToTopButton.classList.remove('visible');\r\n-    }\r\n-});\r\n-\r\n-backToTopButton.addEventListener('click', () => {\r\n-    window.scrollTo({\r\n-        top: 0,\r\n-        behavior: 'smooth' // Smooth scroll to top\r\n-    });\r\n-});\r\n \t// Nav.\r\n \t\tvar $nav = $header.children('nav'),\r\n \t\t\t$nav_li = $nav.find('li');\r\n \r\n"
+                },
+                {
+                    "date": 1740208309418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,22 @@\n \r\n \t\t\t}).triggerHandler('resize.flexbox-fix');\r\n \r\n \t\t}\r\n-\r\n+\t\t// CLOSE BUTTON FUNCTIONALITY\r\n+\t\tdocument.addEventListener('DOMContentLoaded', function () {\r\n+\t\t\t// Add close buttons to all articles\r\n+\t\t\tconst articles = document.querySelectorAll('#main article');\r\n+\t\t\tarticles.forEach(article => {\r\n+\t\t\t\tconst closeBtn = document.createElement('div');\r\n+\t\t\t\tcloseBtn.classList.add('close-btn');\r\n+\t\t\t\tcloseBtn.innerHTML = '×'; // Close icon\r\n+\t\t\t\tcloseBtn.addEventListener('click', () => {\r\n+\t\t\t\t\twindow.location.href = '#'; // Return to homepage\r\n+\t\t\t\t});\r\n+\t\t\t\tarticle.appendChild(closeBtn);\r\n+\t\t\t});\r\n+\t\t});\r\n \t// Nav.\r\n \t\tvar $nav = $header.children('nav'),\r\n \t\t\t$nav_li = $nav.find('li');\r\n \r\n"
                 }
             ],
             "date": 1740204555537,

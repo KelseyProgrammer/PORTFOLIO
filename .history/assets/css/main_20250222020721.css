@@ -1485,11 +1485,12 @@ html, body {
 }
 
 /* Main Section */
+/* Main Section */
 #main {
     padding: 4rem 2rem; /* Add padding for better spacing */
     max-width: 1200px; /* Limit width for better readability */
     margin: 0 auto; /* Center the main section */
-    background: linear-gradient(135deg, rgba(0, 64, 64, 0.9), rgba(0, 32, 64, 0.9)), url('images/background-pattern.png'); /* Dark teal gradient with subtle pattern */
+    background: linear-gradient(135deg, rgba(0, 128, 128, 0.9), rgba(0, 0, 255, 0.9)), url('images/background-pattern.png'); /* Teal to blue gradient with subtle pattern */
     background-size: cover;
     background-attachment: fixed; /* Parallax effect */
     border-radius: 20px; /* Rounded corners */
@@ -1512,7 +1513,6 @@ html, body {
     backdrop-filter: blur(10px); /* Frosted glass effect */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
-    position: relative; /* For close button positioning */
 }
 
 #main article:hover {
@@ -1520,34 +1520,10 @@ html, body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
 }
 
-/* Close Button Styling */
-#main article .close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-    color: white;
-    font-size: 1.2rem;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%; /* Circular button */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-#main article .close-btn:hover {
-    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
 /* Text Styling */
 #main article h2.major {
     font-size: 2.5rem; /* Larger heading */
-    background: linear-gradient(45deg, #00cccc, #0066cc); /* Dark teal to blue gradient text */
+    background: linear-gradient(45deg, #00ffff, #0077ff); /* Teal to blue gradient text */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; /* Gradient text effect */
@@ -1598,7 +1574,7 @@ html, body {
 
 /* Button Styling */
 button {
-    background: linear-gradient(45deg, #00cccc, #0066cc); /* Dark teal to blue gradient */
+    background: linear-gradient(45deg, #00ffff, #0077ff); /* Teal to blue gradient */
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -1617,11 +1593,11 @@ button:hover {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 64, 64, 0.1); /* Dark teal track */
+    background: rgba(0, 128, 128, 0.1); /* Teal track */
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #00cccc, #0066cc); /* Dark teal to blue gradient thumb */
+    background: linear-gradient(45deg, #00ffff, #0077ff); /* Teal to blue gradient thumb */
     border-radius: 5px;
 }
 
