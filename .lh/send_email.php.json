@@ -1,0 +1,18 @@
+{
+    "sourceFile": "send_email.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1740247009749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1740247009749,
+            "name": "Commit-0",
+            "content": "<?php\nif ($_SERVER[\"REQUEST_METHOD\"] == \"POST\") {\n    // Get form data\n    $name = htmlspecialchars($_POST['name']);\n    $email = htmlspecialchars($_POST['email']);\n    $message = htmlspecialchars($_POST['message']);\n\n    // Set recipient email address\n    $to = \"Chrisament45@gmail.com\";\n\n    // Set email subject\n    $subject = \"New Message from $name\";\n\n    // Compose the email body\n    $body = \"Name: $name\\n\";\n    $body .= \"Email: $email\\n\\n\";\n    $body .= \"Message:\\n$message\";\n\n    // Set email headers\n    $headers = \"From: $email\\r\\n\";\n    $headers .= \"Reply-To: $email\\r\\n\";\n\n    // Send the email\n    if (mail($to, $subject, $body, $headers)) {\n        echo \"Message sent successfully!\";\n    } else {\n        echo \"Failed to send message.\";\n    }\n} else {\n    echo \"Invalid request.\";\n}\n?>"
+        }
+    ]
+}

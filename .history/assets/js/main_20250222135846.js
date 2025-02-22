@@ -130,8 +130,15 @@
 
 					// Lock.
 						locked = true;
-	
-		
+						// toggle button
+						document.getElementById('toggle-approach').addEventListener('click', function () {
+							const approachSection = document.getElementById('approach');
+							if (approachSection.style.display === 'none' || approachSection.style.display === '') {
+								approachSection.style.display = 'block'; // Show the section
+							} else {
+								approachSection.style.display = 'none'; // Hide the section
+							}
+						});
 						// toggle button
 						document.getElementById('toggle-projects').addEventListener('click', function () {
 							const projectsSection = document.getElementById('projects');

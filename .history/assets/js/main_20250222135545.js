@@ -130,17 +130,15 @@
 
 					// Lock.
 						locked = true;
-	
-		
 						// toggle button
-						document.getElementById('toggle-projects').addEventListener('click', function () {
-							const projectsSection = document.getElementById('projects');
-							if (projectsSection.style.display === 'none' || projectsSection.style.display === '') {
-								projectsSection.style.display = 'block'; // Show the section
+						document.getElementById('toggle-approach').addEventListener('click', function () {
+							const approachSection = document.getElementById('approach');
+							if (approachSection.style.display === 'none' || approachSection.style.display === '') {
+								approachSection.style.display = 'block'; // Show the section
 							} else {
-								projectsSection.style.display = 'none'; // Hide the section
+								approachSection.style.display = 'none'; // Hide the section
 							}
-						}
+						});
 				// Article already visible? Just swap articles.
 					if ($body.hasClass('is-article-visible')) {
 

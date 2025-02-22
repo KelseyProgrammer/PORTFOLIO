@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1740204555537,
@@ -32,6 +32,22 @@
                 {
                     "date": 1740234495999,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -383,9 +383,8 @@\n \t\t\t\t\t\tthis.closest('article').style.display = 'none';\r\n \t\t\t\t\t});\r\n \t\t\t\t});\r\n \t\t\t});\r\n-\t\t// Scroll restoration.\r\n \t\t\r\n \t\t// This prevents the page from scrolling back to the top on a hashchange.\r\n \t\t\tif ('scrollRestoration' in history)\r\n \t\t\t\thistory.scrollRestoration = 'manual';\r\n"
+                },
+                {
+                    "date": 1740250360772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,9 +129,16 @@\n \t\t\t\t\t\t}\r\n \r\n \t\t\t\t\t// Lock.\r\n \t\t\t\t\t\tlocked = true;\r\n-\r\n+\t\t\t\t\t\tdocument.getElementById('toggle-approach').addEventListener('click', function () {\r\n+\t\t\t\t\t\t\tconst approachSection = document.getElementById('approach');\r\n+\t\t\t\t\t\t\tif (approachSection.style.display === 'none' || approachSection.style.display === '') {\r\n+\t\t\t\t\t\t\t\tapproachSection.style.display = 'block'; // Show the section\r\n+\t\t\t\t\t\t\t} else {\r\n+\t\t\t\t\t\t\t\tapproachSection.style.display = 'none'; // Hide the section\r\n+\t\t\t\t\t\t\t}\r\n+\t\t\t\t\t\t});\r\n \t\t\t\t// Article already visible? Just swap articles.\r\n \t\t\t\t\tif ($body.hasClass('is-article-visible')) {\r\n \r\n \t\t\t\t\t\t// Deactivate current article.\r\n"
+                },
+                {
+                    "date": 1740250545073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,8 +129,9 @@\n \t\t\t\t\t\t}\r\n \r\n \t\t\t\t\t// Lock.\r\n \t\t\t\t\t\tlocked = true;\r\n+\t\t\t\t\t\t// toggle button\r\n \t\t\t\t\t\tdocument.getElementById('toggle-approach').addEventListener('click', function () {\r\n \t\t\t\t\t\t\tconst approachSection = document.getElementById('approach');\r\n \t\t\t\t\t\t\tif (approachSection.style.display === 'none' || approachSection.style.display === '') {\r\n \t\t\t\t\t\t\t\tapproachSection.style.display = 'block'; // Show the section\r\n"
+                },
+                {
+                    "date": 1740250726199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,8 +138,17 @@\n \t\t\t\t\t\t\t} else {\r\n \t\t\t\t\t\t\t\tapproachSection.style.display = 'none'; // Hide the section\r\n \t\t\t\t\t\t\t}\r\n \t\t\t\t\t\t});\r\n+\t\t\t\t\t\t// toggle button\r\n+\t\t\t\t\t\tdocument.getElementById('toggle-projects').addEventListener('click', function () {\r\n+\t\t\t\t\t\t\tconst projectsSection = document.getElementById('projects');\r\n+\t\t\t\t\t\t\tif (projectsSection.style.display === 'none' || projectsSection.style.display === '') {\r\n+\t\t\t\t\t\t\t\tprojectsSection.style.display = 'block'; // Show the section\r\n+\t\t\t\t\t\t\t} else {\r\n+\t\t\t\t\t\t\t\tprojectsSection.style.display = 'none'; // Hide the section\r\n+\t\t\t\t\t\t\t}\r\n+\t\t\t\t\t\t}\r\n \t\t\t\t// Article already visible? Just swap articles.\r\n \t\t\t\t\tif ($body.hasClass('is-article-visible')) {\r\n \r\n \t\t\t\t\t\t// Deactivate current article.\r\n"
+                },
+                {
+                    "date": 1740250931619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,18 +129,11 @@\n \t\t\t\t\t\t}\r\n \r\n \t\t\t\t\t// Lock.\r\n \t\t\t\t\t\tlocked = true;\r\n+\t\r\n+\t\t\r\n \t\t\t\t\t\t// toggle button\r\n-\t\t\t\t\t\tdocument.getElementById('toggle-approach').addEventListener('click', function () {\r\n-\t\t\t\t\t\t\tconst approachSection = document.getElementById('approach');\r\n-\t\t\t\t\t\t\tif (approachSection.style.display === 'none' || approachSection.style.display === '') {\r\n-\t\t\t\t\t\t\t\tapproachSection.style.display = 'block'; // Show the section\r\n-\t\t\t\t\t\t\t} else {\r\n-\t\t\t\t\t\t\t\tapproachSection.style.display = 'none'; // Hide the section\r\n-\t\t\t\t\t\t\t}\r\n-\t\t\t\t\t\t});\r\n-\t\t\t\t\t\t// toggle button\r\n \t\t\t\t\t\tdocument.getElementById('toggle-projects').addEventListener('click', function () {\r\n \t\t\t\t\t\t\tconst projectsSection = document.getElementById('projects');\r\n \t\t\t\t\t\t\tif (projectsSection.style.display === 'none' || projectsSection.style.display === '') {\r\n \t\t\t\t\t\t\t\tprojectsSection.style.display = 'block'; // Show the section\r\n"
                 }
             ],
             "date": 1740204555537,

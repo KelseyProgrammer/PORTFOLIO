@@ -677,7 +677,7 @@ input, select, textarea {
 			top: 0;
 			width: 100%;
 		}
-
+		
 		.image img {
 			border-radius: 4px;
 			display: block;
@@ -1432,6 +1432,7 @@ body {
     transform: scale(1.05); /* Slight scale up */
 }
 
+
 /* Simplified Particle Animation */
 /* Simplified Particle Animation */
 #header::after {
@@ -1485,22 +1486,22 @@ html, body {
 }
 
 /* Main Section */
+/* Main Section */
 #main {
-    padding: 4rem 2rem; /* Add padding for better spacing */
-    max-width: 1200px; /* Limit width for better readability */
-    margin: 0 auto; /* Center the main section */
-    background: linear-gradient(135deg, rgba(0, 64, 64, 0.9), rgba(0, 32, 64, 0.9)), url('images/background-pattern.png'); /* Dark teal gradient with subtle pattern */
-    background-size: cover;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(0, 64, 64, 0.9), rgba(0, 32, 64, 0.9)), url('images/background-pattern.png');
+    background-size: 200% 200%; /* Double the size for smooth scrolling */
     background-attachment: fixed; /* Parallax effect */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    animation: gradientShift 15s ease infinite; /* Animated gradient background */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: gradientShift 15s linear infinite; /* Smooth, linear animation */
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
 }
 
 /* Article Styling */
@@ -1600,33 +1601,31 @@ button:hover {
     background: linear-gradient(45deg, #00cccc, #0066cc); /* Dark teal to blue gradient thumb */
     border-radius: 5px;
 }
-/* Toggle Button */
+/* Styling for the toggle button */
+/* Styling for the toggle button */
+/* Styling for the toggle button */
 #toggle-approach {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block; /* Ensure it behaves like a button */
     margin: 1rem 0;
     padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    color: white; /* White text */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Thin white outline */
+    border-radius: 5px; /* Rounded corners */
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Match font of other buttons */
     font-size: 1rem;
     font-weight: 600;
-    transition: background 0.3s ease, border-color 0.3s ease;
-    text-align: center;
+    text-align: center; /* Center text */
+    transition: background 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
 }
 
 #toggle-approach:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+    border-color: rgba(255, 255, 255, 0.4); /* Brighter outline on hover */
 }
-
-/* Approach Section */
+/* Styling for the second article */
 #approach {
-    display: none; /* Hidden by default */
     margin-top: 2rem;
 }
 

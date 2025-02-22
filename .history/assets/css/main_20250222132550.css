@@ -1432,6 +1432,7 @@ body {
     transform: scale(1.05); /* Slight scale up */
 }
 
+
 /* Simplified Particle Animation */
 /* Simplified Particle Animation */
 #header::after {
@@ -1600,11 +1601,12 @@ button:hover {
     background: linear-gradient(45deg, #00cccc, #0066cc); /* Dark teal to blue gradient thumb */
     border-radius: 5px;
 }
-/* Toggle Button */
+/* Styling for the toggle button */
+/* Styling for the toggle button */
 #toggle-approach {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* Enable Flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
     margin: 1rem 0;
     padding: 0.75rem 1.5rem;
     background: rgba(255, 255, 255, 0.1);
@@ -1616,17 +1618,14 @@ button:hover {
     font-size: 1rem;
     font-weight: 600;
     transition: background 0.3s ease, border-color 0.3s ease;
-    text-align: center;
 }
 
 #toggle-approach:hover {
     background: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.4);
 }
-
-/* Approach Section */
+/* Styling for the second article */
 #approach {
-    display: none; /* Hidden by default */
     margin-top: 2rem;
 }
 

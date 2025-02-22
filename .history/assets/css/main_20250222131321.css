@@ -1432,6 +1432,7 @@ body {
     transform: scale(1.05); /* Slight scale up */
 }
 
+
 /* Simplified Particle Animation */
 /* Simplified Particle Animation */
 #header::after {
@@ -1599,35 +1600,6 @@ button:hover {
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #00cccc, #0066cc); /* Dark teal to blue gradient thumb */
     border-radius: 5px;
-}
-/* Toggle Button */
-#toggle-approach {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0;
-    padding: 0.75rem 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background 0.3s ease, border-color 0.3s ease;
-    text-align: center;
-}
-
-#toggle-approach:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-}
-
-/* Approach Section */
-#approach {
-    display: none; /* Hidden by default */
-    margin-top: 2rem;
 }
 
 /* Responsive Design */
