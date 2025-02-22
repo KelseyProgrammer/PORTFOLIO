@@ -1273,10 +1273,6 @@ input, select, textarea {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 /* General styles for the header */
-/* Add Poppins font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* General styles for the header */
 #header {
     display: flex;
     flex-direction: column;
@@ -1294,25 +1290,28 @@ input, select, textarea {
     overflow: hidden;
 }
 
-/* Glow effect for ALL text on hover only */
-#header *:not(.logo):hover {
+/* Glow effect for ALL text */
+#header * {
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+#header *:hover {
     text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow effect on hover */
 }
 
-/* Logo styling with 3D transformation */
+/* Logo styling */
 #header .logo {
     width: 5rem;
     height: 5rem;
     line-height: 5rem;
     border: solid 1px #ffffff;
     border-radius: 100%;
-    transition: box-shadow 0.3s ease-in-out, transform 1s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
     margin-bottom: 1rem; /* Space below the logo */
 }
 
 #header .logo:hover {
     box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.8); /* Glow effect */
-    transform: rotateY(180deg); /* 3D flip effect */
 }
 
 #header .logo .icon:before {
@@ -1417,39 +1416,27 @@ input, select, textarea {
     transform: scale(1.05); /* Slight scale up */
 }
 
-/* Particle animation */
-#header::after {
+/* Impressive background animation */
+#header::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent 80%, transparent);
-    background-size: 3rem 3rem;
-    animation: moveParticles 10s linear infinite;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/leaves.png') repeat;
+    opacity: 0;
     z-index: -1;
+    animation: moveLeaves 20s linear infinite;
 }
 
-@keyframes moveParticles {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100%); }
+#header:hover::before {
+    opacity: 0.3; /* Show leaves on hover */
 }
 
-/* Custom cursor */
-body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'), auto;
-}
-
-/* Dynamic background color change */
-#header {
-    animation: changeBackground 10s infinite alternate;
-}
-
-@keyframes changeBackground {
-    0% { background-color: rgba(0, 0, 0, 0.8); }
-    50% { background-color: rgba(40, 40, 40, 0.8); }
-    100% { background-color: rgba(0, 0, 0, 0.8); }
+@keyframes moveLeaves {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50%, -50%); } /* Move leaves diagonally */
 }
 /* Main */
 

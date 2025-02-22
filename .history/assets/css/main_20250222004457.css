@@ -1269,78 +1269,114 @@ input, select, textarea {
 		}
 
 /* Header */
-/* Add Poppins font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* General styles for the header */
-/* Add Poppins font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* General styles for the header */
 #header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, rgba(0, 0, 0, 0) 55%);
     max-width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; /* Ensure header fits the screen height */
     text-align: center;
-    padding: 2rem; /* Padding for spacing */
+    padding: 2rem; /* Add padding to ensure content doesn't touch edges */
     box-sizing: border-box; /* Include padding in height calculation */
-    font-family: 'Poppins', sans-serif; /* Stylish modern font */
-    color: #ffffff; /* White text color */
+    padding-bottom: 4rem; /* Add 1/2 inch (approx. 4rem) padding at the bottom */
+    position: relative; /* Required for positioning */
+    overflow: hidden; /* Hide overflow */
+}
+
+#header > * {
+    transition: opacity 0.325s ease-in-out;
     position: relative;
-    overflow: hidden;
+    margin-top: 1rem; /* Add margin between elements */
 }
 
-/* Glow effect for ALL text on hover only */
-#header *:not(.logo):hover {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow effect on hover */
+#header > *:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(-1rem - 1px); /* Adjusted for margin */
+    left: calc(50% - 1px);
+    width: 1px;
+    height: calc(1rem + 1px); /* Adjusted for margin */
+    background: #ffffff;
 }
 
-/* Logo styling with 3D transformation */
+#header > :first-child {
+    margin-top: 0;
+}
+
+#header > :first-child:before {
+    display: none;
+}
+
 #header .logo {
-    width: 5rem;
-    height: 5rem;
-    line-height: 5rem;
+    width: 5rem; /* Smaller logo size */
+    height: 5rem; /* Smaller logo size */
+    line-height: 5rem; /* Adjusted line height */
     border: solid 1px #ffffff;
     border-radius: 100%;
-    transition: box-shadow 0.3s ease-in-out, transform 1s ease-in-out;
-    margin-bottom: 1rem; /* Space below the logo */
+    transition: box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Smooth transition for glow effect */
+    margin-top: 0; /* Move logo to the very top */
 }
 
 #header .logo:hover {
-    box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.8); /* Glow effect */
-    transform: rotateY(180deg); /* 3D flip effect */
+    box-shadow: 0 0 30px 15px rgba(255, 255, 255, 0.8); /* More pronounced glow effect */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* More pronounced text glow */
 }
 
 #header .logo .icon:before {
-    font-size: 2rem;
-    transition: text-shadow 0.3s ease-in-out;
+    font-size: 2rem; /* Adjusted icon size */
+    transition: text-shadow 0.3s ease-in-out; /* Glow effect for icon */
 }
 
 #header .logo .icon:hover:before {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Icon glow */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow effect on hover */
 }
 
-/* Content styling */
 #header .content {
-    border: solid 1px #ffffff;
-    border-width: 1px 0; /* Top and bottom borders */
-    max-width: 90%;
-    margin: 1rem auto; /* Center content */
-    padding: 1rem; /* Inner padding */
+    border-style: solid;
+    border-color: #ffffff;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    max-width: 100%;
+    width: 90%; /* Ensure content doesn't overflow */
+    margin: 0 auto; /* Center content horizontally */
+    margin-top: 1rem; /* Add margin above content */
 }
 
-/* Welcome text styling */
+#header .content .inner {
+    transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+    padding: 1rem; /* Reduced padding to fit more content */
+    max-height: 40rem;
+    overflow: hidden;
+}
+
+/* Stylish fonts and glow effect for all text */
+#header .content .inner h1.welcome-text,
+#header .content .inner p.intro-text,
+#header .content .inner p.cta-text,
+#header nav ul li a {
+    font-family: 'Poppins', sans-serif; /* Stylish modern font */
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+}
+
+#header .content .inner h1.welcome-text:hover,
+#header .content .inner p.intro-text:hover,
+#header .content .inner p.cta-text:hover,
+#header nav ul li a:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow effect on hover */
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Creative styling for "Welcome, I'm Chris Ament..." */
 #header .content .inner h1.welcome-text {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(45deg, #ffffff, #00ffff);
+    font-size: 3.5rem; /* Larger font size for "Welcome" */
+    margin-bottom: 0.5rem; /* Reduced space below the heading */
+    background: linear-gradient(45deg, #ffffff, #00ffff); /* Gradient text effect */
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent; /* Gradient text effect */
+    color: transparent; /* Make text transparent to show gradient */
     animation: float 3s ease-in-out infinite; /* Floating animation */
 }
 
@@ -1349,13 +1385,13 @@ input, select, textarea {
     50% { transform: translateY(-10px); }
 }
 
-/* Intro text styling */
 #header .content .inner p.intro-text {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-size: 1.5rem;
-    line-height: 1.6;
-    opacity: 0; /* Start hidden */
+    font-size: 1.5rem; /* Adjusted font size for readability */
+    line-height: 1.6; /* Reduced line height to save space */
+    color: #ffffff;
+    opacity: 0; /* Start hidden for fade-in effect */
     animation: fade-in 2s ease-in-out 1s forwards; /* Fade in after 1 second */
 }
 
@@ -1364,34 +1400,42 @@ input, select, textarea {
     to { opacity: 1; }
 }
 
-/* CTA text styling */
 #header .content .inner p.cta-text {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    opacity: 0; /* Start hidden */
+    font-size: 1.2rem; /* Adjusted font size for readability */
+    line-height: 1.6; /* Reduced line height to save space */
+    color: #ffffff;
+    opacity: 0; /* Start hidden for fade-in effect */
     animation: fade-in 2s ease-in-out 2s forwards; /* Fade in after 2 seconds */
 }
 
-/* Navigation styling */
+#header .content .inner .glow {
+    font-weight: bold; /* Make "DEV" and "SITE" stand out */
+    transition: text-shadow 0.3s ease-in-out; /* Glow effect for specific words */
+}
+
+#header .content .inner .glow:hover {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* More pronounced glow effect */
+}
+
 #header nav ul {
     display: flex;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 0;
     list-style: none;
+    padding-left: 0;
     border: solid 1px #ffffff;
     border-radius: 4px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem; /* Space above buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap if needed */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 1rem; /* Add margin above buttons */
 }
 
 #header nav ul li {
-    padding: 0;
+    padding-left: 0;
     border-left: solid 1px #ffffff;
-    flex: 1 1 auto;
-    min-width: 10rem;
+    flex: 1 1 auto; /* Allow buttons to grow and shrink */
+    min-width: 10rem; /* Minimum width for each button */
 }
 
 #header nav ul li:first-child {
@@ -1400,56 +1444,25 @@ input, select, textarea {
 
 #header nav ul li a {
     display: block;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    padding: 0 1rem;
+    height: 2.5rem; /* Reduced height for better fit */
+    line-height: 2.5rem; /* Adjusted line height */
+    padding: 0 1rem; /* Reduced padding */
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-size: 1rem;
-    color: #ffffff;
-    text-decoration: none;
-    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 1rem; /* Slightly smaller font size for nav bar */
+    border-bottom: 0;
+    text-align: center; /* Center text within buttons */
+    transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out; /* Glow effect for text */
 }
 
 #header nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.075);
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow effect */
-    transform: scale(1.05); /* Slight scale up */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* More pronounced glow effect */
+    transform: scale(1.05); /* Slightly scale up on hover */
 }
 
-/* Particle animation */
-#header::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, transparent 20%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent 80%, transparent);
-    background-size: 3rem 3rem;
-    animation: moveParticles 10s linear infinite;
-    z-index: -1;
-}
-
-@keyframes moveParticles {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100%); }
-}
-
-/* Custom cursor */
-body {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>'), auto;
-}
-
-/* Dynamic background color change */
-#header {
-    animation: changeBackground 10s infinite alternate;
-}
-
-@keyframes changeBackground {
-    0% { background-color: rgba(0, 0, 0, 0.8); }
-    50% { background-color: rgba(40, 40, 40, 0.8); }
-    100% { background-color: rgba(0, 0, 0, 0.8); }
+#header nav ul li a:active {
+    background-color: rgba(40, 130, 124, 0.075);
 }
 /* Main */
 
