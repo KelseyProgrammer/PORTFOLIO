@@ -1543,7 +1543,7 @@ html, body {
 }
 
 /* Image Styling */
-#main article img {
+#main article img image main {
     max-width: 100%; /* Ensure images are responsive */
     height: auto; /* Maintain aspect ratio */
     border-radius: 15px; /* Rounded corners for images */

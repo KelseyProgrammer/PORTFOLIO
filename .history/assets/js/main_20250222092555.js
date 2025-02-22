@@ -384,7 +384,25 @@
 					});
 				});
 			});
+		// Scroll restoration.
+		document.addEventListener('DOMContentLoaded', function() {
+			// Add event listeners to all navigation links
+			document.querySelectorAll('nav a').forEach(function(link) {
+				link.addEventListener('click', function(event) {
+					// Prevent the default anchor behavior
+					event.preventDefault();
 		
+					// Get the target article ID from the href attribute
+					const targetId = this.getAttribute('href').substring(1);
+					const targetArticle = document.getElementById(targetId);
+		
+					// Smoothly scroll to the target article
+					if (targetArticle) {
+						targetArticle.scrollIntoView({ behavior: 'smooth' });
+					}
+				});
+			});
+		});
 		// This prevents the page from scrolling back to the top on a hashchange.
 			if ('scrollRestoration' in history)
 				history.scrollRestoration = 'manual';

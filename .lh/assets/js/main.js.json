@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1740204555537,
@@ -16,6 +16,22 @@
                 {
                     "date": 1740208309418,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,22 @@\n \r\n \t\t\t}).triggerHandler('resize.flexbox-fix');\r\n \r\n \t\t}\r\n-\r\n+\t\t// CLOSE BUTTON FUNCTIONALITY\r\n+\t\tdocument.addEventListener('DOMContentLoaded', function () {\r\n+\t\t\t// Add close buttons to all articles\r\n+\t\t\tconst articles = document.querySelectorAll('#main article');\r\n+\t\t\tarticles.forEach(article => {\r\n+\t\t\t\tconst closeBtn = document.createElement('div');\r\n+\t\t\t\tcloseBtn.classList.add('close-btn');\r\n+\t\t\t\tcloseBtn.innerHTML = '×'; // Close icon\r\n+\t\t\t\tcloseBtn.addEventListener('click', () => {\r\n+\t\t\t\t\twindow.location.href = '#'; // Return to homepage\r\n+\t\t\t\t});\r\n+\t\t\t\tarticle.appendChild(closeBtn);\r\n+\t\t\t});\r\n+\t\t});\r\n \t// Nav.\r\n \t\tvar $nav = $header.children('nav'),\r\n \t\t\t$nav_li = $nav.find('li');\r\n \r\n"
+                },
+                {
+                    "date": 1740233822245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -373,9 +373,18 @@\n \r\n \t\t\t\t\t}\r\n \r\n \t\t\t});\r\n-\r\n+\t\t\t// close button\r\n+\t\t\tdocument.addEventListener('DOMContentLoaded', function() {\r\n+\t\t\t\t// Add event listeners to all close buttons\r\n+\t\t\t\tdocument.querySelectorAll('.close-btn').forEach(function(button) {\r\n+\t\t\t\t\tbutton.addEventListener('click', function() {\r\n+\t\t\t\t\t\t// Hide the article when the close button is clicked\r\n+\t\t\t\t\t\tthis.closest('article').style.display = 'none';\r\n+\t\t\t\t\t});\r\n+\t\t\t\t});\r\n+\t\t\t});\r\n \t\t// Scroll restoration.\r\n \t\t// This prevents the page from scrolling back to the top on a hashchange.\r\n \t\t\tif ('scrollRestoration' in history)\r\n \t\t\t\thistory.scrollRestoration = 'manual';\r\n"
+                },
+                {
+                    "date": 1740234355899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -384,8 +384,26 @@\n \t\t\t\t\t});\r\n \t\t\t\t});\r\n \t\t\t});\r\n \t\t// Scroll restoration.\r\n+\t\tdocument.addEventListener('DOMContentLoaded', function() {\r\n+\t\t\t// Add event listeners to all navigation links\r\n+\t\t\tdocument.querySelectorAll('nav a').forEach(function(link) {\r\n+\t\t\t\tlink.addEventListener('click', function(event) {\r\n+\t\t\t\t\t// Prevent the default anchor behavior\r\n+\t\t\t\t\tevent.preventDefault();\r\n+\t\t\r\n+\t\t\t\t\t// Get the target article ID from the href attribute\r\n+\t\t\t\t\tconst targetId = this.getAttribute('href').substring(1);\r\n+\t\t\t\t\tconst targetArticle = document.getElementById(targetId);\r\n+\t\t\r\n+\t\t\t\t\t// Smoothly scroll to the target article\r\n+\t\t\t\t\tif (targetArticle) {\r\n+\t\t\t\t\t\ttargetArticle.scrollIntoView({ behavior: 'smooth' });\r\n+\t\t\t\t\t}\r\n+\t\t\t\t});\r\n+\t\t\t});\r\n+\t\t});\r\n \t\t// This prevents the page from scrolling back to the top on a hashchange.\r\n \t\t\tif ('scrollRestoration' in history)\r\n \t\t\t\thistory.scrollRestoration = 'manual';\r\n \t\t\telse {\r\n"
+                },
+                {
+                    "date": 1740234414265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -384,26 +384,9 @@\n \t\t\t\t\t});\r\n \t\t\t\t});\r\n \t\t\t});\r\n \t\t// Scroll restoration.\r\n-\t\tdocument.addEventListener('DOMContentLoaded', function() {\r\n-\t\t\t// Add event listeners to all navigation links\r\n-\t\t\tdocument.querySelectorAll('nav a').forEach(function(link) {\r\n-\t\t\t\tlink.addEventListener('click', function(event) {\r\n-\t\t\t\t\t// Prevent the default anchor behavior\r\n-\t\t\t\t\tevent.preventDefault();\r\n \t\t\r\n-\t\t\t\t\t// Get the target article ID from the href attribute\r\n-\t\t\t\t\tconst targetId = this.getAttribute('href').substring(1);\r\n-\t\t\t\t\tconst targetArticle = document.getElementById(targetId);\r\n-\t\t\r\n-\t\t\t\t\t// Smoothly scroll to the target article\r\n-\t\t\t\t\tif (targetArticle) {\r\n-\t\t\t\t\t\ttargetArticle.scrollIntoView({ behavior: 'smooth' });\r\n-\t\t\t\t\t}\r\n-\t\t\t\t});\r\n-\t\t\t});\r\n-\t\t});\r\n \t\t// This prevents the page from scrolling back to the top on a hashchange.\r\n \t\t\tif ('scrollRestoration' in history)\r\n \t\t\t\thistory.scrollRestoration = 'manual';\r\n \t\t\telse {\r\n"
+                },
+                {
+                    "date": 1740234495999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -383,9 +383,8 @@\n \t\t\t\t\t\tthis.closest('article').style.display = 'none';\r\n \t\t\t\t\t});\r\n \t\t\t\t});\r\n \t\t\t});\r\n-\t\t// Scroll restoration.\r\n \t\t\r\n \t\t// This prevents the page from scrolling back to the top on a hashchange.\r\n \t\t\tif ('scrollRestoration' in history)\r\n \t\t\t\thistory.scrollRestoration = 'manual';\r\n"
                 }
             ],
             "date": 1740204555537,

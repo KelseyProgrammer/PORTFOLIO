@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 36,
+            "activePatchIndex": 44,
             "patches": [
                 {
                     "date": 1740199955612,
@@ -152,6 +152,38 @@
                 {
                     "date": 1740232100268,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1559,16 +1559,10 @@\n     margin: 1rem auto; /* Center images */\n     width: 100%; /* Set a consistent width */\n     max-height: 400px; /* Set a reasonable maximum height */\n     object-fit: cover; /* Ensure images fill the container without distortion */\n-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */\n }\n \n-#main article img:hover {\n-    transform: scale(1.05); /* Slightly enlarge image on hover */\n-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Shadow on hover */\n-}\n-\n /* List Styling */\n #main article ol {\n     list-style-type: none; /* Remove default list styling */\n     padding: 0;\n"
+                },
+                {
+                    "date": 1740233180682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1536,9 +1536,9 @@\n \n /* Text Styling */\n #main article h2.major {\n     font-size: 2.5rem; /* Larger heading */\n-    background: linear-gradient(45deg, #00cccc, #0066cc); /* Dark teal to blue gradient text */\n+    background: linear-gradient(45deg, #f9fcfc, #057377); /* Dark teal to blue gradient text */\n     -webkit-background-clip: text;\n     background-clip: text;\n     color: transparent; /* Gradient text effect */\n     margin-bottom: 1.5rem; /* Spacing below heading */\n"
+                },
+                {
+                    "date": 1740233261364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1534,16 +1534,8 @@\n }\n \n \n /* Text Styling */\n-#main article h2.major {\n-    font-size: 2.5rem; /* Larger heading */\n-    background: linear-gradient(45deg, #f9fcfc, #057377); /* Dark teal to blue gradient text */\n-    -webkit-background-clip: text;\n-    background-clip: text;\n-    color: transparent; /* Gradient text effect */\n-    margin-bottom: 1.5rem; /* Spacing below heading */\n-}\n \n #main article p {\n     font-size: 1.1rem; /* Slightly larger text */\n     line-height: 1.8; /* Improved readability */\n"
+                },
+                {
+                    "date": 1740233334893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1549,9 +1549,9 @@\n     border-radius: 15px; /* Rounded corners for images */\n     display: block; /* Ensure images don't have extra space below */\n     margin: 1rem auto; /* Center images */\n     width: 100%; /* Set a consistent width */\n-    max-height: 400px; /* Set a reasonable maximum height */\n+    max-height: 200px; /* Set a reasonable maximum height */\n     object-fit: cover; /* Ensure images fill the container without distortion */\n }\n \n /* List Styling */\n"
+                },
+                {
+                    "date": 1740233344930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1549,9 +1549,9 @@\n     border-radius: 15px; /* Rounded corners for images */\n     display: block; /* Ensure images don't have extra space below */\n     margin: 1rem auto; /* Center images */\n     width: 100%; /* Set a consistent width */\n-    max-height: 200px; /* Set a reasonable maximum height */\n+    max-height: 300px; /* Set a reasonable maximum height */\n     object-fit: cover; /* Ensure images fill the container without distortion */\n }\n \n /* List Styling */\n"
+                },
+                {
+                    "date": 1740233425594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1542,9 +1542,9 @@\n     color: rgba(255, 255, 255, 0.9); /* Slightly transparent text */\n }\n \n /* Image Styling */\n-#main article img {\n+#main article img image main {\n     max-width: 100%; /* Ensure images are responsive */\n     height: auto; /* Maintain aspect ratio */\n     border-radius: 15px; /* Rounded corners for images */\n     display: block; /* Ensure images don't have extra space below */\n"
+                },
+                {
+                    "date": 1740233444428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1542,9 +1542,9 @@\n     color: rgba(255, 255, 255, 0.9); /* Slightly transparent text */\n }\n \n /* Image Styling */\n-#main article img image main {\n+#main article img {\n     max-width: 100%; /* Ensure images are responsive */\n     height: auto; /* Maintain aspect ratio */\n     border-radius: 15px; /* Rounded corners for images */\n     display: block; /* Ensure images don't have extra space below */\n"
+                },
+                {
+                    "date": 1740233887190,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1511,8 +1511,11 @@\n     padding: 2rem; /* Inner padding */\n     backdrop-filter: blur(10px); /* Frosted glass effect */\n     border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */\n     position: relative; /* For close button positioning */\n+    max-width: 300px; /* Set max width */\n+    width: 100%; /* Ensure all articles are the same size */\n+    margin: 0 auto 3rem; /* Center articles and add spacing */\n }\n \n /* Close Button Styling */\n #main article .close-btn {\n@@ -1532,11 +1535,14 @@\n     cursor: pointer;\n     transition: background 0.3s ease, transform 0.3s ease;\n }\n \n+#main article .close-btn:hover {\n+    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */\n+    transform: scale(1.1); /* Slightly enlarge on hover */\n+}\n \n /* Text Styling */\n-\n #main article p {\n     font-size: 1.1rem; /* Slightly larger text */\n     line-height: 1.8; /* Improved readability */\n     color: rgba(255, 255, 255, 0.9); /* Slightly transparent text */\n@@ -1549,9 +1555,9 @@\n     border-radius: 15px; /* Rounded corners for images */\n     display: block; /* Ensure images don't have extra space below */\n     margin: 1rem auto; /* Center images */\n     width: 100%; /* Set a consistent width */\n-    max-height: 300px; /* Set a reasonable maximum height */\n+    max-height: 200px; /* Set a reasonable maximum height */\n     object-fit: cover; /* Ensure images fill the container without distortion */\n }\n \n /* List Styling */\n@@ -1611,7 +1617,7 @@\n         padding: 1.5rem; /* Reduce padding on smaller screens */\n     }\n \n     #main article img {\n-        max-height: 300px; /* Adjust height for smaller screens */\n+        max-height: 200px; /* Adjust height for smaller screens */\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740233985982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1511,11 +1511,8 @@\n     padding: 2rem; /* Inner padding */\n     backdrop-filter: blur(10px); /* Frosted glass effect */\n     border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */\n     position: relative; /* For close button positioning */\n-    max-width: 300px; /* Set max width */\n-    width: 100%; /* Ensure all articles are the same size */\n-    margin: 0 auto 3rem; /* Center articles and add spacing */\n }\n \n /* Close Button Styling */\n #main article .close-btn {\n@@ -1535,14 +1532,11 @@\n     cursor: pointer;\n     transition: background 0.3s ease, transform 0.3s ease;\n }\n \n-#main article .close-btn:hover {\n-    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */\n-    transform: scale(1.1); /* Slightly enlarge on hover */\n-}\n \n /* Text Styling */\n+\n #main article p {\n     font-size: 1.1rem; /* Slightly larger text */\n     line-height: 1.8; /* Improved readability */\n     color: rgba(255, 255, 255, 0.9); /* Slightly transparent text */\n@@ -1555,9 +1549,9 @@\n     border-radius: 15px; /* Rounded corners for images */\n     display: block; /* Ensure images don't have extra space below */\n     margin: 1rem auto; /* Center images */\n     width: 100%; /* Set a consistent width */\n-    max-height: 200px; /* Set a reasonable maximum height */\n+    max-height: 300px; /* Set a reasonable maximum height */\n     object-fit: cover; /* Ensure images fill the container without distortion */\n }\n \n /* List Styling */\n@@ -1617,7 +1611,7 @@\n         padding: 1.5rem; /* Reduce padding on smaller screens */\n     }\n \n     #main article img {\n-        max-height: 200px; /* Adjust height for smaller screens */\n+        max-height: 300px; /* Adjust height for smaller screens */\n     }\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1740199955612,

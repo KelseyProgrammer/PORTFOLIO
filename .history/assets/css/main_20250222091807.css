@@ -1512,6 +1512,9 @@ html, body {
     backdrop-filter: blur(10px); /* Frosted glass effect */
     border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
     position: relative; /* For close button positioning */
+    max-width: 300px; /* Set max width */
+    width: 100%; /* Ensure all articles are the same size */
+    margin: 0 auto 3rem; /* Center articles and add spacing */
 }
 
 /* Close Button Styling */
@@ -1533,9 +1536,12 @@ html, body {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
+#main article .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2); /* Highlight on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
 
 /* Text Styling */
-
 #main article p {
     font-size: 1.1rem; /* Slightly larger text */
     line-height: 1.8; /* Improved readability */
@@ -1550,7 +1556,7 @@ html, body {
     display: block; /* Ensure images don't have extra space below */
     margin: 1rem auto; /* Center images */
     width: 100%; /* Set a consistent width */
-    max-height: 300px; /* Set a reasonable maximum height */
+    max-height: 200px; /* Set a reasonable maximum height */
     object-fit: cover; /* Ensure images fill the container without distortion */
 }
 
@@ -1612,6 +1618,6 @@ button:hover {
     }
 
     #main article img {
-        max-height: 300px; /* Adjust height for smaller screens */
+        max-height: 200px; /* Adjust height for smaller screens */
     }
 }

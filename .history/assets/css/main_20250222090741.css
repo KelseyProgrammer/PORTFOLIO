@@ -1550,7 +1550,7 @@ html, body {
     display: block; /* Ensure images don't have extra space below */
     margin: 1rem auto; /* Center images */
     width: 100%; /* Set a consistent width */
-    max-height: 300px; /* Set a reasonable maximum height */
+    max-height: 400px; /* Set a reasonable maximum height */
     object-fit: cover; /* Ensure images fill the container without distortion */
 }
 

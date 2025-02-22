@@ -384,6 +384,7 @@
 					});
 				});
 			});
+		// Scroll restoration.
 		
 		// This prevents the page from scrolling back to the top on a hashchange.
 			if ('scrollRestoration' in history)
