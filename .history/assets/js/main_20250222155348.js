@@ -131,7 +131,16 @@
 					// Lock.
 						locked = true;
 	
+		
 	
+						document.getElementById('toggle-projects').addEventListener('click', function () {
+							const projectsSection = document.getElementById('projects');
+							if (projectsSection.style.display === 'none' || projectsSection.style.display === '') {
+								projectsSection.style.display = 'block'; // Show the section
+							} else {
+								projectsSection.style.display = 'none'; // Hide the section
+							}
+						}; // Added the missing parenthesis here
 					
 				// Article already visible? Just swap articles.
 					if ($body.hasClass('is-article-visible')) {

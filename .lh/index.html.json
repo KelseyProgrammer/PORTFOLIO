@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 37,
+            "activePatchIndex": 38,
             "patches": [
                 {
                     "date": 1740202196668,
@@ -156,6 +156,10 @@
                 {
                     "date": 1740251111049,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,14 +123,14 @@\n \r\n             <!-- Footer -->\r\n             <footer id=\"footer\">\r\n                 <section>\r\n-                    <h2>Christopher Ament</h2>\r\n-                    <p>Full-Stack Software Engineer</p>\r\n+    \r\n                     <ul class=\"icons\">\r\n                         <li><a href=\"https://www.linkedin.com/in/christopher-ament/\" class=\"icon brands fa-linkedin\"><span class=\"label\">Linkedin</span></a></li>\r\n                         <li><a href=\"https://x.com/AmentChris89906\" class=\"icon brands fa-twitter\"><span class=\"label\">Twitter</span></a></li>\r\n                         <li><a href=\"https://www.facebook.com/Pepe.Hulahoop?mibextid=LQQJ4d&rdid=V8VOjp34nHOnYmFf&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F6s263QHDZVqxFeVj%2F%3Fmibextid%3DLQQJ4d\" class=\"icon brands fa-facebook-f\"><span class=\"label\">Facebook</span></a></li>\r\n+\t\t\t\t\t\t<li><a href=\"https://github.com/KelseyProgrammer\" class=\"fa fa-github fa-2x\"></a></li>\r\n                     </ul>\r\n                 </section>\r\n             </footer>\r\n \r\n"
+                },
+                {
+                    "date": 1740257657309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,14 +124,8 @@\n             <!-- Footer -->\r\n             <footer id=\"footer\">\r\n                 <section>\r\n     \r\n-                    <ul class=\"icons\">\r\n-                        <li><a href=\"https://www.linkedin.com/in/christopher-ament/\" class=\"icon brands fa-linkedin\"><span class=\"label\">Linkedin</span></a></li>\r\n-                        <li><a href=\"https://x.com/AmentChris89906\" class=\"icon brands fa-twitter\"><span class=\"label\">Twitter</span></a></li>\r\n-                        <li><a href=\"https://www.facebook.com/Pepe.Hulahoop?mibextid=LQQJ4d&rdid=V8VOjp34nHOnYmFf&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F6s263QHDZVqxFeVj%2F%3Fmibextid%3DLQQJ4d\" class=\"icon brands fa-facebook-f\"><span class=\"label\">Facebook</span></a></li>\r\n-\t\t\t\t\t\t<li><a href=\"https://github.com/KelseyProgrammer\" class=\"fa fa-github fa-2x\"></a></li>\r\n-                    </ul>\r\n                 </section>\r\n             </footer>\r\n \r\n             <!-- Scripts -->\r\n"
                 }
             ],
             "date": 1740202196668,
