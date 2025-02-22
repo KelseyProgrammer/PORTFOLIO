@@ -1471,26 +1471,10 @@ body {
     }
 }
 /* Main Section */
-/* Ensure the body and html allow scrolling */
-html, body {
-    height: 100%; /* Ensure the body takes up the full height of the viewport */
-    overflow: auto; /* Allow scrolling */
-}
-
-/* Wrapper styling */
-#wrapper {
-    min-height: 100vh; /* Ensure the wrapper takes up at least the full viewport height */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main Section */
 #main {
     padding: 4rem 2rem; /* Add padding for better spacing */
     max-width: 1200px; /* Limit width for better readability */
     margin: 0 auto; /* Center the main section */
-    flex-grow: 1; /* Allow the main section to grow and fill available space */
-    overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 
 /* Article Styling */
