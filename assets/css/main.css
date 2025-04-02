@@ -1295,8 +1295,10 @@ body {
 }
 
 /* Header Styling */
+
 #header {
-    display: flex;
+	
+	display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -1399,7 +1401,7 @@ body {
     border-radius: 4px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 1rem; /* Space above buttons */
+    margin-top: 1rem;
 }
 
 #header nav ul li {
@@ -1428,8 +1430,51 @@ body {
 
 #header nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.075);
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Glow effect */
-    transform: scale(1.05); /* Slight scale up */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 736px) {
+    #header nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 1rem auto;
+    }
+
+    #header nav ul li {
+        border-left: none;
+        border-bottom: solid 1px #ffffff;
+        width: 100%;
+        min-width: unset;
+    }
+
+    #header nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    #header nav ul li a {
+        height: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        font-size: 0.9rem;
+        letter-spacing: 0.15rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #header nav ul {
+        max-width: 250px;
+    }
+
+    #header nav ul li a {
+        height: 2.75rem;
+        line-height: 2.75rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+        padding: 0 0.75rem;
+    }
 }
 
 /* Simplified Particle Animation */
@@ -1489,7 +1534,7 @@ html, body {
     padding: 4rem 2rem; /* Add padding for better spacing */
     max-width: 1200px; /* Limit width for better readability */
     margin: 0 auto; /* Center the main section */
-    background: linear-gradient(135deg, rgba(0, 64, 64, 0.9), rgba(0, 32, 64, 0.9)), url('images/background-pattern.png'); /* Dark teal gradient with subtle pattern */
+    background: linear-gradient(135deg, rgba(0, 64, 64, 0.9), rgba(0, 32, 64, 0.9)), url('images/bg.jpeg'); /* Dark teal gradient with subtle pattern */
     background-size: cover;
     background-attachment: fixed; /* Parallax effect */
     border-radius: 20px; /* Rounded corners */
@@ -1642,5 +1687,140 @@ button:hover {
 
     #main article img {
         max-height: 300px; /* Adjust height for smaller screens */
+    }
+}
+
+/* Responsive Design Enhancements */
+@media screen and (max-width: 1680px) {
+    #header .content .inner {
+        padding: 0 2rem;
+    }
+    
+    #goals {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    #header .content .inner h1 {
+        font-size: 2rem;
+    }
+    
+    #header .content .inner h2 {
+        font-size: 1.8rem;
+    }
+    
+    #header .content .inner h3 {
+        font-size: 1.2rem;
+    }
+    
+    #goals {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #header .content .inner {
+        padding: 0 1.5rem;
+    }
+    
+    #header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #header nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    #goals li {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #header .content .inner h1 {
+        font-size: 1.8rem;
+        letter-spacing: 0.3rem;
+    }
+    
+    #header .content .inner h2 {
+        font-size: 1.5rem;
+        letter-spacing: 0.3rem;
+    }
+    
+    #header .content .inner h3 {
+        font-size: 1rem;
+    }
+    
+    #header .content .inner p {
+        font-size: 0.9rem;
+    }
+    
+    #goals {
+        width: 100%;
+    }
+    
+    #goals li img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .fa-2x {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #header .content .inner h1 {
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    #header .content .inner h2 {
+        font-size: 1.2rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    #header .content .inner h3 {
+        font-size: 0.9rem;
+    }
+    
+    #header .content .inner p {
+        font-size: 0.8rem;
+    }
+    
+    #goals li h4 {
+        font-size: 1.2rem;
+    }
+    
+    .fa-2x {
+        font-size: 1.2rem !important;
+    }
+    
+    #main article {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #header .content .inner h1 {
+        font-size: 1.2rem;
+    }
+    
+    #header .content .inner h2 {
+        font-size: 1rem;
+    }
+    
+    #header .content .inner h3 {
+        font-size: 0.8rem;
+    }
+    
+    #header .content .inner p {
+        font-size: 0.7rem;
+    }
+    
+    #goals li h4 {
+        font-size: 1rem;
     }
 }
