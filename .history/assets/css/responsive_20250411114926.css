@@ -1,0 +1,23 @@
+/* responsive.css - Enhanced responsive styles for Christopher Ament's portfolio */
+
+/* Base responsive styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Extra large screens (1680px and up) */
+@media screen and (min-width: 1681px) {
+    #header .content .inner {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+} 

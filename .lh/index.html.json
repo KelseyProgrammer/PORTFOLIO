@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 47,
+            "activePatchIndex": 52,
             "patches": [
                 {
                     "date": 1740202196668,
@@ -196,6 +196,26 @@
                 {
                     "date": 1743530628589,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n \n                     Outside of software, I&#39;m a musician and an audio engineer. Music has always been a big part of my life, and when I&#39;m not building apps, you&#39;ll find me playing guitar or working on sound projects. I&#39;m also a proud husband and father, which means life is always filled with joy and a bit of chaos — in the best way possible.\n \n                     I love working on projects that challenge me and allow me to grow as a developer. If you're into tech, music, or just looking to collaborate on something cool, I&#39;d love to connect! </p>\n-                    <form action=\"https://docs.google.com/document/d/1JUL1KnyYCiGvCMo20PEBHXV-oO879Snq-qCWmFcML_A/edit?tab=t.0\">\n+                    <form action=\"https://docs.google.com/document/d/1ldJVbcz7au9Pcg4hF3yJu8UydzYncJCYR9cgYJc-ntY/edit?tab=t.0\">\n                         <input type=\"submit\" value=\"Resume\">\n                     </form>\n                     <button id=\"toggle-approach\">Read My Approach</button>\n                 </article>\n"
+                },
+                {
+                    "date": 1744386570335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n-<!DOCTYPE HTML>\n <!--\n     Dimension by HTML5 UP\n     html5up.net | @ajlkn\n     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n@@ -9,10 +8,24 @@\n         <title>Christopher Ament</title>\n         <meta charset=\"utf-8\" />\n         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />\n         <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n+        <link rel=\"stylesheet\" href=\"assets/css/responsive.css\" />\n+<!DOCTYPE HTML>\n         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n         <noscript><link rel=\"stylesheet\" href=\"assets/css/noscript.css\" /></noscript>\n+<!--\n+    Dimension by HTML5 UP\n+    html5up.net | @ajlkn\n+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n+-->\n+<html>\n+    <head>\n+        <title>Christopher Ament</title>\n+        <meta charset=\"utf-8\" />\n+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />\n+        <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n+        <link rel=\"stylesheet\" href=\"assets/css/responsive.css\" />\n     </head> \n     <body class=\"is-preload\">\n         <!-- Wrapper -->\n         <div id=\"wrapper\">\n"
+                },
+                {
+                    "date": 1744386724637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+<!DOCTYPE HTML>\n <!--\n     Dimension by HTML5 UP\n     html5up.net | @ajlkn\n     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n@@ -9,23 +10,10 @@\n         <meta charset=\"utf-8\" />\n         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />\n         <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n         <link rel=\"stylesheet\" href=\"assets/css/responsive.css\" />\n-<!DOCTYPE HTML>\n         <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n         <noscript><link rel=\"stylesheet\" href=\"assets/css/noscript.css\" /></noscript>\n-<!--\n-    Dimension by HTML5 UP\n-    html5up.net | @ajlkn\n-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)\n--->\n-<html>\n-    <head>\n-        <title>Christopher Ament</title>\n-        <meta charset=\"utf-8\" />\n-        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\" />\n-        <link rel=\"stylesheet\" href=\"assets/css/main.css\" />\n-        <link rel=\"stylesheet\" href=\"assets/css/responsive.css\" />\n     </head> \n     <body class=\"is-preload\">\n         <!-- Wrapper -->\n         <div id=\"wrapper\">\n"
+                },
+                {
+                    "date": 1744387399454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n                     </div>\n                 </div>\n                 <nav>\n                     <ul>\n-                        <li><a href=\"#intro\">Who I am / My Approach</a></li>\n+                        <li><a href=\"#intro\">Who I am</a></li>\n                         <li><a href=\"#work\">What I do</a></li>\n                         <li><a href=\"#contact\">How to Reach Me</a></li>\n                     </ul>\n                 </nav>\n"
+                },
+                {
+                    "date": 1744387566885,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n                     </div>\n                 </div>\n                 <nav>\n                     <ul>\n-                        <li><a href=\"#intro\">Who I am</a></li>\n+                        <li><a href=\"#intro\">Who I am / My Approach</a></li>\n                         <li><a href=\"#work\">What I do</a></li>\n                         <li><a href=\"#contact\">How to Reach Me</a></li>\n                     </ul>\n                 </nav>\n"
+                },
+                {
+                    "date": 1744387590756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,9 +38,9 @@\n                     </div>\n                 </div>\n                 <nav>\n                     <ul>\n-                        <li><a href=\"#intro\">Who I am / My Approach</a></li>\n+                        <li><a href=\"#intro\">Who I am</a></li>\n                         <li><a href=\"#work\">What I do</a></li>\n                         <li><a href=\"#contact\">How to Reach Me</a></li>\n                     </ul>\n                 </nav>\n"
                 }
             ],
             "date": 1740202196668,

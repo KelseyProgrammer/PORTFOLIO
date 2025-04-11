@@ -1,0 +1,28 @@
+/* responsive.css - Enhanced responsive styles for Christopher Ament's portfolio */
+    }
+    
+    p {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    #header .content {
+        margin: 0.5rem auto;
+    }
+    
+    #header nav {
+        margin: 0.5rem 0;
+    }
+    
+    #header nav ul li a {
+        height: 2rem;
+        line-height: 2rem;
+    }
+}
+
+/* Extra large screens (1680px and up) */
+@media screen and (min-width: 1681px) {
+    #header .content .inner {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+} 
