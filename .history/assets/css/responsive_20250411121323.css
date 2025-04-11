@@ -1,0 +1,196 @@
+/* responsive.css - Enhanced responsive styles for Christopher Ament's portfolio */
+
+/* Base responsive styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    min-height: 100%;
+    height: auto !important;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Fix for iframe embedding (especially LinkedIn) */
+body {
+    position: relative;
+    overflow-y: visible !important;
+    overflow-x: hidden;
+    background-attachment: fixed !important;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* LinkedIn iframe specific fixes */
+#wrapper {
+    padding: 1rem 0.5rem !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 !important;
+}
+
+#header {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 1rem 0.5rem !important;
+    overflow: visible !important;
+    margin: 0 !important;
+}
+
+/* Make sure content is visible in iframe */
+#header .content {
+    border-width: 1px 0;
+    max-width: 90%;
+    margin: 0.5rem auto !important;
+    padding: 0.5rem 0 !important;
+}
+
+#header .content .inner {
+    padding: 0.5rem !important;
+    max-height: none !important;
+}
+
+/* Reduce all margins to prevent cutoff */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+p {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Adjust navigation size */
+#header nav {
+    margin: 0.5rem 0 !important;
+}
+
+#header nav ul {
+    flex-wrap: wrap;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+#header nav ul li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#header nav ul li a {
+    height: 2rem !important;
+    line-height: 2rem !important;
+    padding: 0 0.5rem !important;
+    font-size: 0.8rem !important;
+}
+
+/* Fix social media icons */
+.fa-2x {
+    font-size: 1.2rem !important;
+    margin: 0 0.25rem !important;
+    padding: 0.25rem !important;
+}
+
+.logo {
+    margin: 0.5rem auto !important;
+    transform: scale(0.8) !important;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media screen and (max-width: 480px) {
+    #wrapper {
+        padding: 0.5rem 0.25rem !important;
+    }
+    
+    #header {
+        padding: 0.5rem 0.25rem !important;
+    }
+    
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.2rem !important;
+    }
+    
+    h3 {
+        font-size: 1rem !important;
+    }
+    
+    p {
+        font-size: 0.9rem !important;
+    }
+    
+    .fa-2x {
+        font-size: 1rem !important;
+    }
+}
+
+/* LinkedIn mobile view adjustments */
+@media screen and (max-width: 400px) and (max-height: 800px) {
+    #header {
+        padding: 0.25rem !important;
+    }
+    
+    .logo {
+        display: none !important; /* Hide logo on very small screens */
+    }
+    
+    h1 {
+        font-size: 1.3rem !important;
+    }
+    
+    h2 {
+        font-size: 1.1rem !important;
+    }
+    
+    h3 {
+        font-size: 0.9rem !important;
+    }
+    
+    #header nav ul li a {
+        height: 1.8rem !important;
+        line-height: 1.8rem !important;
+        font-size: 0.7rem !important;
+    }
+}
+
+/* iframe detector - applies when site is in iframe (like LinkedIn) */
+@media screen and (max-height: 700px) {
+    #header {
+        transform: scale(0.95) !important;
+        transform-origin: top center !important;
+    }
+    
+    h1, h2, h3 {
+        margin: 0.1rem 0 !important;
+    }
+    
+    .logo {
+        width: 3rem !important;
+        height: 3rem !important;
+        margin: 0 auto 0.25rem !important;
+    }
+    
+    #header nav ul {
+        transform: scale(0.9) !important;
+        transform-origin: center !important;
+    }
+}
+
+/* Extra large screens (1680px and up) */
+@media screen and (min-width: 1681px) {
+    #header .content .inner {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+} 
