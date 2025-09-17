@@ -10,8 +10,155 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/responsive.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        
+        <!-- Add iframe detection script -->
+        <script>
+            // Check if the page is in an iframe
+            function isInIframe() {
+                try {
+                    return window.self !== window.top;
+                } catch (e) {
+                    return true;
+                }
+            }
+            
+            // Apply iframe-specific styles when the page is fully loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                if (isInIframe()) {
+                    document.body.classList.add('in-iframe');
+                    
+                    // Handle links to show content in iframe instead of navigating
+                    document.querySelectorAll('nav a').forEach(function(link) {
+                        link.addEventListener('click', function(e) {
+                            // Don't apply this to external links
+                            if (this.getAttribute('href').startsWith('#')) {
+                                e.preventDefault();
+                                
+                                // Get the article ID
+                                const targetId = this.getAttribute('href').substring(1);
+                                const targetArticle = document.getElementById(targetId);
+                                
+                                if (targetArticle) {
+                                    // Hide header
+                                    document.getElementById('header').style.display = 'none';
+                                    
+                                    // Show main and target article
+                                    document.getElementById('main').style.display = 'block';
+                                    targetArticle.style.display = 'block';
+                                    targetArticle.classList.add('active');
+                                    
+                                    // Add a back button if not already there
+                                    if (!targetArticle.querySelector('.iframe-back')) {
+                                        const backBtn = document.createElement('button');
+                                        backBtn.className = 'iframe-back';
+                                        backBtn.textContent = 'Back to Home';
+                                        backBtn.style.display = 'block';
+                                        backBtn.style.margin = '1rem auto';
+                                        backBtn.style.padding = '0.5rem 1rem';
+                                        backBtn.addEventListener('click', function() {
+                                            // Hide article and main
+                                            targetArticle.style.display = 'none';
+                                            targetArticle.classList.remove('active');
+                                            document.getElementById('main').style.display = 'none';
+                                            
+                                            // Show header again
+                                            document.getElementById('header').style.display = 'flex';
+                                        });
+                                        targetArticle.appendChild(backBtn);
+                                    }
+                                }
+                            }
+                        });
+                    });
+                }
+            });
+        </script>
+        
+        <!-- iframe-specific styles -->
+        <style>
+            /* Only apply these styles when in an iframe */
+            body.in-iframe {
+                overflow: auto !important;
+                height: auto !important;
+            }
+            
+            body.in-iframe #wrapper {
+                min-height: unset !important;
+                padding: 1rem !important;
+            }
+            
+            body.in-iframe #header {
+                height: auto !important;
+                min-height: unset !important;
+                padding-top: 1rem !important;
+                padding-bottom: 1rem !important;
+            }
+            
+            body.in-iframe #main article {
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                overflow-y: auto !important;
+                max-height: 80vh !important;
+            }
+            
+            body.in-iframe .content .inner {
+                padding: 1rem !important;
+            }
+            
+            body.in-iframe h1 {
+                font-size: 2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            body.in-iframe h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            body.in-iframe h3 {
+                font-size: 1.2rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            body.in-iframe p {
+                margin-bottom: 0.75rem !important;
+            }
+            
+            body.in-iframe .fa-2x {
+                font-size: 1.2rem !important;
+                padding: 0.4rem !important;
+            }
+            
+            body.in-iframe nav ul {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+            }
+            
+            body.in-iframe nav ul li {
+                margin: 0.25rem !important;
+            }
+            
+            body.in-iframe .close-btn {
+                display: none !important;
+            }
+            
+            body.in-iframe .iframe-back {
+                background: rgba(255, 255, 255, 0.1);
+                color: white;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            body.in-iframe .iframe-back:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        </style>
     </head> 
     <body class="is-preload">
         <!-- Wrapper -->
@@ -38,7 +185,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#intro">Who I am / My Approach</a></li>
+                        <li><a href="#intro">Who I am</a></li>
                         <li><a href="#work">What I do</a></li>
                         <li><a href="#contact">How to Reach Me</a></li>
                     </ul>
@@ -58,7 +205,7 @@
                     Outside of software, I&#39;m a musician and an audio engineer. Music has always been a big part of my life, and when I&#39;m not building apps, you&#39;ll find me playing guitar or working on sound projects. I&#39;m also a proud husband and father, which means life is always filled with joy and a bit of chaos — in the best way possible.
 
                     I love working on projects that challenge me and allow me to grow as a developer. If you're into tech, music, or just looking to collaborate on something cool, I&#39;d love to connect! </p>
-                    <form action="https://docs.google.com/document/d/1JUL1KnyYCiGvCMo20PEBHXV-oO879Snq-qCWmFcML_A/edit?tab=t.0">
+                    <form action="https://docs.google.com/document/d/1_Qo3WeO2cLv-H1A0bARxce3rQi7N3QzJXEgVCXDZ12M/edit?tab=t.0">
                         <input type="submit" value="Resume">
                     </form>
                     <button id="toggle-approach">Read My Approach</button>
@@ -77,11 +224,17 @@
 
                 <!-- Work Article -->
                 <article id="work">
-                    <h2 class="major">Non-Proprietary<br>Projects</h2>
+                    <h2 class="major">Projects</h2>
                     <ol id="goals">
                         <li><a href="https://spectralsalonagourahills.netlify.app/">
                             <img alt="SALONTHUMBNAIL" src="images/spectralgif.gif" width="250" height="200">
                             </a><a href="https://spectralsalonagourahills.netlify.app/"><h4>   Spectral Salon</h4></a></li>
+                            <li><a href="https://github.com/jamesAllenJahner3rd/project_manager">
+                                <img alt="PROJECT MANAGER THUMBNAIL" src="images/DEVSYNC.GIF" width="250" height="200">
+                                </a><a href="https://project-manager-a0mx.onrender.com/"><h4>   DevSync Project Manager Application</h4></a></li>
+                            <li><a href="https://pulsehealthapp.netlify.app/">
+                                <img alt="PULSE HEALTH THUMBNAIL" src="images/PULSETHUMB.png" width="250" height="200">
+                                </a><a href="https://pulsehealthapp.netlify.app/"><h4>   Pulse Health App</h4></a></li>
                     </ol>
                 </article>
 
