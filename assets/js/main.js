@@ -155,10 +155,14 @@
 
 										$article.addClass('active');
 
-										// Window stuff.
-											$window
-												.scrollTop(0)
-												.triggerHandler('resize.flexbox-fix');
+									// Window stuff - only scroll to top if needed
+										if (!$body.hasClass('is-preload')) {
+											// Only scroll to top if not in preload state
+											if (!$body.hasClass('is-preload')) {
+												$window.scrollTop(0);
+											}
+										}
+										$window.triggerHandler('resize.flexbox-fix');
 
 										// Unlock.
 											setTimeout(function() {
@@ -194,10 +198,14 @@
 
 										$article.addClass('active');
 
-										// Window stuff.
-											$window
-												.scrollTop(0)
-												.triggerHandler('resize.flexbox-fix');
+									// Window stuff - only scroll to top if needed
+										if (!$body.hasClass('is-preload')) {
+											// Only scroll to top if not in preload state
+											if (!$body.hasClass('is-preload')) {
+												$window.scrollTop(0);
+											}
+										}
+										$window.triggerHandler('resize.flexbox-fix');
 
 										// Unlock.
 											setTimeout(function() {
@@ -253,10 +261,14 @@
 							// Unmark as switching.
 								$body.removeClass('is-switching');
 
-							// Window stuff.
-								$window
-									.scrollTop(0)
-									.triggerHandler('resize.flexbox-fix');
+									// Window stuff - only scroll to top if needed
+										if (!$body.hasClass('is-preload')) {
+											// Only scroll to top if not in preload state
+											if (!$body.hasClass('is-preload')) {
+												$window.scrollTop(0);
+											}
+										}
+										$window.triggerHandler('resize.flexbox-fix');
 
 							return;
 
@@ -284,10 +296,14 @@
 
 								$body.removeClass('is-article-visible');
 
-								// Window stuff.
-									$window
-										.scrollTop(0)
-										.triggerHandler('resize.flexbox-fix');
+									// Window stuff - only scroll to top if needed
+										if (!$body.hasClass('is-preload')) {
+											// Only scroll to top if not in preload state
+											if (!$body.hasClass('is-preload')) {
+												$window.scrollTop(0);
+											}
+										}
+										$window.triggerHandler('resize.flexbox-fix');
 
 								// Unlock.
 									setTimeout(function() {
@@ -387,27 +403,26 @@
 				});
 			});
 		
-		// This prevents the page from scrolling back to the top on a hashchange.
+		// Improved scroll behavior - prevent unwanted scrolling
 			if ('scrollRestoration' in history)
 				history.scrollRestoration = 'manual';
-			else {
-
-				var	oldScrollPos = 0,
-					scrollPos = 0,
-					$htmlbody = $('html,body');
-
-				$window
-					.on('scroll', function() {
-
-						oldScrollPos = scrollPos;
-						scrollPos = $htmlbody.scrollTop();
-
-					})
-					.on('hashchange', function() {
-						$window.scrollTop(oldScrollPos);
-					});
-
-			}
+			
+			// Prevent automatic scrolling on hash changes
+			var preventScroll = false;
+			
+			$window.on('hashchange', function(event) {
+				preventScroll = true;
+				setTimeout(function() {
+					preventScroll = false;
+				}, 100);
+			});
+			
+			// Only scroll to top when explicitly needed
+			$window.on('scroll', function() {
+				if (preventScroll) {
+					return;
+				}
+			});
 
 		// Initialize.
 

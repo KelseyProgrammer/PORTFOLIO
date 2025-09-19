@@ -240,7 +240,8 @@
                             <p><strong>DevSync</strong> - A real-time project management platform serving over 100 users. Built as a collaborative effort with 100Devs, this agile project management tool features Socket.IO integration that reduced task-update latency by 40%. Implemented Google OAuth authentication for enhanced security and integrated in-app chat functionality to strengthen team communication. The platform enables seamless collaboration and real-time updates for distributed development teams.</p></li>
                         <li><a href="https://spectralsalonagourahills.netlify.app/">
                                     <img alt="SALONTHUMBNAIL" src="images/spectralgif.gif" width="250" height="200">
-                                    </a><a href="https://spectralsalonagourahills.netlify.app/"><h4>   Spectral Salon</h4></a></li>
+                                    </a><a href="https://spectralsalonagourahills.netlify.app/"><h4>   Spectral Salon</h4></a>
+                            <p><strong>Spectral Salon</strong> - A modern, elegant website designed for a premium beauty salon in Agoura Hills. This responsive web application showcases the salon's sophisticated atmosphere and professional services with a clean, contemporary design. Features include service showcases, appointment booking capabilities, and a visually stunning gallery highlighting the salon's expertise in hair styling, coloring, and beauty treatments. The site creates an immersive digital experience that reflects the salon's commitment to luxury and client satisfaction.</p></li>
                     </ol>
                 </article>
 
@@ -291,7 +292,19 @@
             <script src="assets/js/browser.min.js"></script>
             <script src="assets/js/breakpoints.min.js"></script>
             <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script>
+			// Speed up GIF animations
+			document.addEventListener('DOMContentLoaded', function() {
+				const gifImages = document.querySelectorAll('#goals img');
+				gifImages.forEach(img => {
+					// Add a class for faster animation
+					img.style.animationDuration = '0.21s'; // 30% faster
+					img.style.animationIterationCount = 'infinite';
+					img.style.animationTimingFunction = 'linear';
+				});
+			});
+		</script>
             <script>
                 document.getElementById('toggle-approach').addEventListener('click', function() {
                     var approachArticle = document.getElementById('approach');

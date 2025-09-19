@@ -31,6 +31,18 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+/* Prevent unwanted scrolling jumps */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Improve parallax scrolling */
+#wrapper {
+	scroll-behavior: smooth;
 }
 
 ol, ul {
@@ -43,6 +55,19 @@ ol, ul {
 	width: 70%;
 	padding: 0%;
 	
+}
+
+/* Speed up GIF animations */
+#goals img {
+	animation-duration: 0.21s; /* 30% faster than 0.3s */
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+/* Alternative: Use transform to speed up the entire image */
+#goals img:hover {
+	transform: scale(1.05);
+	transition: transform 0.3s ease;
 }
 h3{
 	width: 100%;
