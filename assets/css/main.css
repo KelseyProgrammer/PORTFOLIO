@@ -54,7 +54,10 @@ ol, ul {
 	list-style: none;
 	width: 70%;
 	padding: 0%;
-	
+	position: relative;
+	z-index: 10;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 /* Speed up GIF animations */
@@ -62,6 +65,22 @@ ol, ul {
 	animation-duration: 0.21s; /* 30% faster than 0.3s */
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
+}
+
+/* Fix scrolling glitches in work article */
+#work {
+	position: relative;
+	z-index: 5;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	will-change: auto;
+}
+
+#work article {
+	position: relative;
+	z-index: 5;
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
 }
 
 /* Alternative: Use transform to speed up the entire image */

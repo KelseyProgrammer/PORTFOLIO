@@ -294,7 +294,7 @@
             <script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-			// Speed up GIF animations
+			// Speed up GIF animations and fix scrolling
 			document.addEventListener('DOMContentLoaded', function() {
 				const gifImages = document.querySelectorAll('#goals img');
 				gifImages.forEach(img => {
@@ -303,6 +303,15 @@
 					img.style.animationIterationCount = 'infinite';
 					img.style.animationTimingFunction = 'linear';
 				});
+				
+				// Fix scrolling glitches in work section
+				const workSection = document.getElementById('work');
+				if (workSection) {
+					workSection.style.position = 'relative';
+					workSection.style.zIndex = '5';
+					workSection.style.transform = 'translateZ(0)';
+					workSection.style.willChange = 'auto';
+				}
 			});
 		</script>
             <script>
