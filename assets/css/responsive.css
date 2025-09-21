@@ -164,6 +164,60 @@ img, video {
     }
 }
 
+/* Mobile performance optimizations for What I Do section */
+@media screen and (max-width: 768px) {
+    /* Disable expensive animations and transforms on mobile */
+    #work {
+        background-attachment: scroll !important;
+        background-position: scroll !important;
+        transform: none !important;
+        will-change: auto !important;
+    }
+    
+    #work article {
+        background-attachment: scroll !important;
+        transform: none !important;
+    }
+    
+    #work .bg {
+        background-attachment: scroll !important;
+        transform: none !important;
+        will-change: auto !important;
+    }
+    
+    /* Optimize GIF performance on mobile */
+    #goals img {
+        animation-play-state: paused;
+        will-change: auto;
+        transform: none;
+        transition: none;
+    }
+    
+    /* Reduce complex hover effects on mobile */
+    #goals img:hover {
+        transform: none;
+        transition: none;
+    }
+    
+    /* Optimize scrolling performance */
+    #main {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+    }
+    
+    /* Disable parallax effects that cause lag */
+    * {
+        background-attachment: scroll !important;
+    }
+    
+    /* Optimize list performance */
+    #goals {
+        transform: none;
+        will-change: auto;
+        -webkit-transform: none;
+    }
+}
+
 /* Extra large screens (1680px and up) */
 @media screen and (min-width: 1681px) {
     #header .content .inner {
