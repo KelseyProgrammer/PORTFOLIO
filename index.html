@@ -200,11 +200,13 @@
                     <h2 class="major">Who I am</h2>
                     <button class="close-btn"></button>
                     <span class="image main"><img src="images/pic02.jpeg" alt="" /></span>
-                    <p>Hi, I&#39;m Christopher Ament, a full-stack software engineer living in Saint Augustine, FL — America&#39;s oldest city. Originally from Fort Lauderdale, I&#39;ve always been drawn to creating and problem-solving, whether I&#39;m working with code or mixing audio tracks.
+                    Hi, I'm Christopher Ament.
 
-                    Outside of software, I&#39;m a musician and an audio engineer. Music has always been a big part of my life, and when I&#39;m not building apps, you&#39;ll find me playing guitar or working on sound projects. I&#39;m also a proud husband and father, which means life is always filled with joy and a bit of chaos — in the best way possible.
+<p>For years, I built things and made art, searching for that elusive feeling of being fully realized. I found it in code.</p>
 
-                    I love working on projects that challenge me and allow me to grow as a developer. If you're into tech, music, or just looking to collaborate on something cool, I&#39;d love to connect! </p>
+<p>There's an intoxicating energy in being around someone who is doing exactly what they're meant to do. For me, that moment of clarity arrived not in a studio, but at a keyboard. The logic, the creativity, the act of building from nothing—it was the missing piece. Nothing has ever felt more right.</p>
+
+Now, as a full-stack developer, I channel that certainty into crafting clean, purposeful web applications. When I'm not coding, I'm still creating—usually as a musician and audio engineer, or enjoying the beautiful chaos of being a husband and father.
                     <form action="https://docs.google.com/document/d/1LRbr95OMKMpHVWe4XDkivu0g2UPhhOa2m0a56s3hfDQ/edit?tab=t.0">
                         <input type="submit" value="Resume">
                     </form>
@@ -232,7 +234,7 @@
                             <p><strong>Venu</strong> - A real-time, location-based event discovery platform designed to drive community engagement. This full-stack application features secure QR ticketing with Stripe payment integration, significantly reducing fraud risk for event organizers. Implemented Firebase Cloud Messaging for targeted notifications, boosting event attendance rates. The platform enables users to discover local events, purchase tickets securely, and stay connected with their community through real-time updates and notifications.</p></li>
                         <li><a href="https://pulsehealthapp.netlify.app/">
                             <img alt="PULSE HEALTH THUMBNAIL" src="images/PULSEGIF.gif" width="250" height="200">
-                            </a><a href="https://pulsehealthapp.netlify.app/"><h4>   Pulse Health App</h4></a>
+                            </a><a href="https://project-manager-a0mx.onrender.com/"><h4>   Pulse Health App</h4></a>
                             <p><strong>Pulse Clinic</strong> - A comprehensive patient portal designed to streamline healthcare access. Built with React and TypeScript, this production-ready web application improves provider search, appointment booking, and medical record navigation. Collaborated with industry mentors and a 5+ developer team to ship core UI components including search functionality, modals, and theme guides. Prioritized accessibility-first design to enhance usability for patients with assistive technologies, ensuring inclusive healthcare access for all users.</p></li>  
                         <li><a href="https://github.com/jamesAllenJahner3rd/project_manager">
                                 <img alt="PROJECT MANAGER THUMBNAIL" src="images/DEVSYNC.GIF" width="250" height="200">
@@ -308,9 +310,28 @@
 				const workSection = document.getElementById('work');
 				if (workSection) {
 					workSection.style.position = 'relative';
-					workSection.style.zIndex = '5';
+					workSection.style.zIndex = '10';
 					workSection.style.transform = 'translateZ(0)';
 					workSection.style.willChange = 'auto';
+					workSection.style.backgroundAttachment = 'scroll';
+					workSection.style.backgroundPosition = 'fixed';
+					
+					// Disable parallax for this section
+					const bgElements = workSection.querySelectorAll('.bg');
+					bgElements.forEach(bg => {
+						bg.style.backgroundAttachment = 'scroll';
+						bg.style.transform = 'none';
+					});
+				}
+			});
+			
+			// Override parallax behavior for work section
+			window.addEventListener('scroll', function() {
+				const workSection = document.getElementById('work');
+				if (workSection) {
+					// Force static positioning to prevent parallax conflicts
+					workSection.style.position = 'relative';
+					workSection.style.transform = 'translateZ(0)';
 				}
 			});
 		</script>
