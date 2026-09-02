@@ -207,7 +207,7 @@
                     <p>There's an intoxicating energy in being around someone who is doing exactly what they're meant to do. For me, that moment of clarity arrived not in a studio, but at a keyboard. The logic, the creativity, the act of building from nothing—it was the missing piece. Nothing has ever felt more right.</p>
 
                     <p>Now, as a full-stack developer, I channel that certainty into crafting clean, purposeful web applications. When I'm not coding, I'm still creating—usually as a musician and audio engineer, or enjoying the beautiful chaos of being a husband and father.</p>
-                    <form action="https://docs.google.com/document/d/1LRbr95OMKMpHVWe4XDkivu0g2UPhhOa2m0a56s3hfDQ/edit?tab=t.0">
+                    <form action="resume.pdf">
                         <input type="submit" value="Resume">
                     </form>
                     <button id="toggle-approach">Read My Approach</button>
@@ -237,19 +237,19 @@
                             </a><a href="https://amenttech.com"><h4>   Ament Home &amp; Tech Services</h4></a>
                             <p><strong>Ament Home &amp; Tech</strong> - The customer platform for my licensed and insured smart-home, security, and network installation business serving Greater St. Augustine. I built the web application — service catalog, booking, and tiered care-plan subscriptions — and run the business behind it: CCTV/NVR systems, network security audits, Wi-Fi architecture, and smart-home integration across HomeKit, Google, and Alexa.</p></li>
                         <li><a href="https://github.com/KelseyProgrammer/Venu">
-                            <img alt="VENU THUMBNAIL" src="images/VENU2.gif" width="250" height="200">
+                            <video src="images/venu2.mp4" width="250" height="200" autoplay loop muted playsinline aria-label="Venu event discovery app demo"></video>
                             </a><a href="https://github.com/KelseyProgrammer/Venu"><h4>   Venu</h4></a>
                             <p><strong>Venu</strong> - A real-time, location-based event discovery platform designed to drive community engagement. This full-stack application features secure QR ticketing with Stripe payment integration, significantly reducing fraud risk for event organizers. Implemented Firebase Cloud Messaging for targeted notifications, boosting event attendance rates. The platform enables users to discover local events, purchase tickets securely, and stay connected with their community through real-time updates and notifications.</p></li>
                         <li><a href="https://pulsehealthapp.netlify.app/">
-                            <img alt="PULSE HEALTH THUMBNAIL" src="images/PULSEGIF.gif" width="250" height="200">
+                            <video src="images/pulsegif.mp4" width="250" height="200" autoplay loop muted playsinline aria-label="Pulse Health patient portal demo"></video>
                             </a><a href="https://pulsehealthapp.netlify.app/"><h4>   Pulse Health App</h4></a>
                             <p><strong>Pulse Clinic</strong> - A comprehensive patient portal designed to streamline healthcare access. Built with React and TypeScript, this production-ready web application improves provider search, appointment booking, and medical record navigation. Collaborated with industry mentors and a 5+ developer team to ship core UI components including search functionality, modals, and theme guides. Prioritized accessibility-first design to enhance usability for patients with assistive technologies, ensuring inclusive healthcare access for all users.</p></li>  
                         <li><a href="https://project-manager-a0mx.onrender.com/">
-                                <img alt="PROJECT MANAGER THUMBNAIL" src="images/DEVSYNC.GIF" width="250" height="200">
+                                <video src="images/devsync.mp4" width="250" height="200" autoplay loop muted playsinline aria-label="DevSync project management app demo"></video>
                                 </a><a href="https://project-manager-a0mx.onrender.com/"><h4>   DevSync Project Manager Application</h4></a>
                             <p><strong>DevSync</strong> - A real-time project management platform serving over 100 users. Built as a collaborative effort with 100Devs, this agile project management tool features Socket.IO integration that reduced task-update latency by 40%. Implemented Google OAuth authentication for enhanced security and integrated in-app chat functionality to strengthen team communication. The platform enables seamless collaboration and real-time updates for distributed development teams.</p></li>
                         <li><a href="https://spectralsalonagourahills.netlify.app/">
-                                    <img alt="SALONTHUMBNAIL" src="images/spectralgif.gif" width="250" height="200">
+                                    <video src="images/spectralgif.mp4" width="250" height="200" autoplay loop muted playsinline aria-label="Spectral Salon website demo"></video>
                                     </a><a href="https://spectralsalonagourahills.netlify.app/"><h4>   Spectral Salon</h4></a>
                             <p><strong>Spectral Salon</strong> - A modern, elegant website designed for a premium beauty salon in Agoura Hills. This responsive web application showcases the salon's sophisticated atmosphere and professional services with a clean, contemporary design. Features include service showcases, appointment booking capabilities, and a visually stunning gallery highlighting the salon's expertise in hair styling, coloring, and beauty treatments. The site creates an immersive digital experience that reflects the salon's commitment to luxury and client satisfaction.</p></li>
                     </ol>
@@ -309,35 +309,20 @@
 				// Detect mobile devices
 				const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
 				
-				const gifImages = document.querySelectorAll('#goals img');
 				const workSection = document.getElementById('work');
-				
-				// Optimize GIF animations for mobile
-				gifImages.forEach((img, index) => {
-					if (isMobile) {
-						// On mobile, pause animations when not in viewport
-						img.style.animationPlayState = 'paused';
-						img.style.willChange = 'auto';
-						
-						// Resume animation when image comes into view
-						const observer = new IntersectionObserver((entries) => {
-							entries.forEach(entry => {
-								if (entry.isIntersecting) {
-									entry.target.style.animationPlayState = 'running';
-								} else {
-									entry.target.style.animationPlayState = 'paused';
-								}
-							});
-						}, { threshold: 0.5 });
-						
-						observer.observe(img);
-					} else {
-						// Desktop: faster animations
-						img.style.animationDuration = '0.21s';
-						img.style.animationIterationCount = 'infinite';
-						img.style.animationTimingFunction = 'linear';
-					}
-				});
+
+				// Play project videos only while they are in the viewport
+				const projectVideos = document.querySelectorAll('#goals video');
+				const videoObserver = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.play();
+						} else {
+							entry.target.pause();
+						}
+					});
+				}, { threshold: 0.25 });
+				projectVideos.forEach(video => videoObserver.observe(video));
 				
 				// Optimize work section for mobile
 				if (workSection) {

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christopher Ament — Resume</title>
+<style>
+  @page { size: letter; margin: 0.35in 0.55in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a1a1a;
+    font-size: 9.4pt;
+    line-height: 1.25;
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  @media print { body { padding: 0; } }
+  a { color: #1a1a1a; text-decoration: none; }
+  .screen-note { display: none; }
+  @media screen {
+    body { background: #fafaf8; }
+    a { border-bottom: 1px solid #b8b2a6; }
+  }
+
+  header { text-align: center; margin-bottom: 7pt; }
+  h1 { font-size: 18.5pt; font-weight: normal; letter-spacing: 2.5px; text-transform: uppercase; }
+  .role {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 9.5pt; letter-spacing: 1.2px; text-transform: uppercase;
+    color: #444; margin-top: 2pt;
+  }
+  .contact {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 8.6pt; color: #333; margin-top: 5pt;
+  }
+  .contact span { white-space: nowrap; }
+  .contact .sep { color: #999; margin: 0 4px; }
+
+  .summary { margin: 5pt 0 0; text-align: center; font-style: italic; color: #222; }
+
+  h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 8.8pt; letter-spacing: 2px; text-transform: uppercase;
+    border-bottom: 1px solid #1a1a1a;
+    margin: 8pt 0 4pt; padding-bottom: 1.5pt;
+  }
+  .job { margin-bottom: 5pt; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .job-title { font-weight: bold; font-size: 10pt; }
+  .job-title .org { font-weight: normal; }
+  .job-dates {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 8.6pt; color: #444; white-space: nowrap; padding-left: 12px;
+  }
+  ul { margin: 1.5pt 0 0 14pt; }
+  li { margin-bottom: 1pt; }
+
+  .skills p, .projects p { margin-bottom: 1pt; }
+  .label { font-family: Helvetica, Arial, sans-serif; font-size: 8.8pt; font-weight: bold; letter-spacing: 0.3px; }
+
+  .earlier { color: #222; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Christopher Ament</h1>
+  <div class="role">Full-Stack Engineer &nbsp;·&nbsp; React · TypeScript · Node.js · C++</div>
+  <div class="contact">
+    <span>St. Augustine, FL</span><span class="sep">|</span>
+    <span>(954) 909-6199</span><span class="sep">|</span>
+    <span><a href="mailto:chrisament45@gmail.com">chrisament45@gmail.com</a></span><span class="sep">|</span>
+    <span><a href="https://christopherament.netlify.app">christopherament.netlify.app</a></span><span class="sep">|</span>
+    <span><a href="https://github.com/KelseyProgrammer">github.com/KelseyProgrammer</a></span><span class="sep">|</span>
+    <span><a href="https://www.linkedin.com/in/christopher-ament/">linkedin.com/in/christopher-ament</a></span>
+  </div>
+</header>
+
+<p class="summary">Full-stack engineer who ships products end-to-end: three audio plugins launched at amentaudio.com (C++/JUCE with a TypeScript storefront), the customer platform for a licensed smart-home installation business, and client web applications — bringing that product-shipping discipline to a full-time engineering team.</p>
+
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><span class="label">Frontend:</span> React, Next.js, TypeScript, JavaScript (ES6+), Vue.js, Tailwind CSS, HTML/CSS, accessibility (WCAG)</p>
+  <p><span class="label">Backend:</span> Node.js, Express, MongoDB, PostgreSQL, Firebase, REST APIs, Socket.IO, Google OAuth</p>
+  <p><span class="label">Audio/Systems:</span> C++, JUCE framework, real-time DSP</p>
+  <p><span class="label">Tools &amp; Practices:</span> Git/GitHub, Stripe payments, Netlify, Vercel, Agile/Scrum, MVC architecture</p>
+</div>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-title">Founder &amp; Engineer <span class="org">— Ament Audio · <a href="https://amentaudio.com">amentaudio.com</a></span></div>
+    <div class="job-dates">2026 – Present</div>
+  </div>
+  <ul>
+    <li>Designed, built, and shipped three commercial VST audio plugins from scratch in <strong>C++ with the JUCE framework</strong>: FREECODER (spectral processor), HALATION (eight-path pitch-shifted feedback engine), and LIMINAL (threshold-based ambient effect) — all available for purchase with free trials.</li>
+    <li>Built the e-commerce storefront in <strong>TypeScript</strong> — product pages, trial distribution, and bundle pricing; own the full product lifecycle from real-time DSP code to UI, marketing site, payments, and support.</li>
+    <li>Launched the product line to market with demo content and community outreach across YouTube, Instagram, and Reddit, targeting experimental-music producers.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-title">Founder <span class="org">— Ament Home &amp; Tech Services · <a href="https://amenttech.com">amenttech.com</a></span></div>
+    <div class="job-dates">2026 – Present</div>
+  </div>
+  <ul>
+    <li>Founded and operate a licensed and insured smart-home, security, and network installation business serving Greater St. Augustine; 5-star rated with tiered subscription care plans.</li>
+    <li>Built the company's customer-facing web application — service catalog, booking, and care-plan sign-up — and the marketing site, handling all engineering for the business.</li>
+    <li>Hands-on expertise in CCTV/NVR systems, network security audits, Wi-Fi/mesh architecture, and smart-home integration across HomeKit, Google, and Alexa ecosystems.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <div class="job-title">Freelance Full-Stack Developer</div>
+    <div class="job-dates">2019 – Present</div>
+  </div>
+  <ul>
+    <li>Deliver production websites and web applications for small-business clients, from design through deployment — including Spectral Salon (premium salon site with booking) and Crewmarket, a marketplace connecting sportfishing crews with charter work.</li>
+    <li>Build and maintain backend APIs with Node.js, Express, and MongoDB/PostgreSQL; manage hosting, domains, and ongoing client support.</li>
+  </ul>
+</div>
+
+<h2>Selected Projects</h2>
+<div class="projects">
+  <p><strong>Venu</strong> <em>(React, TypeScript, Stripe, Firebase)</em> — Real-time, location-based event discovery platform with secure QR ticketing via Stripe and targeted push notifications through Firebase Cloud Messaging.</p>
+  <p><strong>Pulse Clinic</strong> <em>(React, TypeScript)</em> — Patient portal shipped with a 5+ developer team under industry mentors; built core UI components (search, modals, theming) with accessibility-first design for assistive-technology users.</p>
+  <p><strong>DevSync</strong> <em>(Node.js, Express, Socket.IO, Google OAuth)</em> — Agile project-management tool serving 100+ users with real-time task updates and in-app chat; built collaboratively with distributed sprint workflows.</p>
+</div>
+
+<h2>Earlier Career</h2>
+<p class="earlier"><strong>Wire Technician · Working Musician &amp; Guitar Teacher · Service Industry</strong> <em>(pre-2019)</em> — Low-voltage wiring and installation work (the technical foundation for Ament Home &amp; Tech), a decade performing and teaching music (the domain expertise behind Ament Audio), plus customer-facing roles in kitchens and with the U.S. Postal Service.</p>
+
+<h2>Education</h2>
+<div class="job">
+  <div class="job-head">
+    <div class="job-title">100Devs Software Engineering Program</div>
+    <div class="job-dates">2023 – 2024</div>
+  </div>
+  <p>700+ hours of intensive training in JavaScript, React, Node.js, and Agile team practices.</p>
+</div>
+<div class="job">
+  <div class="job-head">
+    <div class="job-title">Santa Fe College, Gainesville, FL <span class="org">— Journalism studies</span></div>
+    <div class="job-dates">2009</div>
+  </div>
+</div>
+
+</body>
+</html>
