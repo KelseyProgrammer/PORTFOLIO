@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 200" role="img" aria-label="Ament Audio — VST plugins">
+  <rect width="250" height="200" fill="#f5f2ec"/>
+  <text x="125" y="62" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="27" letter-spacing="3" fill="#141414">AMENT</text>
+  <text x="125" y="92" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="27" letter-spacing="9" fill="#141414">AUDIO</text>
+  <polyline points="30,130 45,130 55,118 65,142 75,112 85,148 95,124 105,136 115,128 135,128 145,120 155,140 165,116 175,144 185,126 195,134 205,130 220,130"
+            fill="none" stroke="#141414" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="125" y="172" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="2" fill="#6b6558">FREECODER · HALATION · LIMINAL</text>
+</svg>
