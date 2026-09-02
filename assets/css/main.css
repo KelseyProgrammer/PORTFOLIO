@@ -1794,14 +1794,20 @@ a:hover {
 	border-radius: 4px;
 	margin: 0 0 1.25rem;
 	padding: 1.25rem;
-	transition: border-color 0.25s ease, transform 0.25s ease;
+	transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 #goals li:hover {
 	background: var(--surface-2);
 	border-color: var(--gold-soft);
-	transform: translateY(-2px);
+	transform: translateY(-3px);
+	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(217, 164, 65, 0.07);
 }
+
+#goals li:hover h4 { color: var(--gold); }
+#goals li:hover h4::before { color: #f0c368; }
+#goals li:hover > a:first-child { border-color: var(--gold-soft); }
+#goals li:hover .project-tags { color: #e5b355; }
 
 #goals li > a:first-child {
 	border-bottom: none;

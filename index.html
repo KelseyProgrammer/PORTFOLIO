@@ -406,6 +406,64 @@
                         });
                     }
 
+                    // Gold flakes trailing the cursor
+                    var sparks = [];
+                    var MAX_SPARKS = 140;
+                    function spawnSparks(x, y, count, spread) {
+                        for (var s = 0; s < count; s++) {
+                            if (sparks.length >= MAX_SPARKS) sparks.shift();
+                            var a = Math.random() * Math.PI * 2;
+                            var v = Math.random() * spread;
+                            sparks.push({
+                                x: x + (Math.random() - 0.5) * 6,
+                                y: y + (Math.random() - 0.5) * 6,
+                                vx: Math.cos(a) * v,
+                                vy: Math.sin(a) * v - 0.3,          // slight initial lift
+                                size: 1 + Math.random() * 2.2,
+                                rot: Math.random() * Math.PI,
+                                vr: (Math.random() - 0.5) * 0.25,   // tumble
+                                life: 1,
+                                decay: 0.012 + Math.random() * 0.02,
+                                tw: Math.random() * Math.PI * 2
+                            });
+                        }
+                    }
+                    if (!reduceMotion) {
+                        header.addEventListener('pointermove', function(e) {
+                            var r = header.getBoundingClientRect();
+                            spawnSparks(e.clientX - r.left, e.clientY - r.top, 3, 0.9);
+                        });
+                        header.addEventListener('pointerdown', function(e) {
+                            var r = header.getBoundingClientRect();
+                            spawnSparks(e.clientX - r.left, e.clientY - r.top, 26, 2.6);
+                        });
+                    }
+
+                    function drawSparks() {
+                        for (var i = sparks.length - 1; i >= 0; i--) {
+                            var s = sparks[i];
+                            s.life -= s.decay;
+                            if (s.life <= 0) { sparks.splice(i, 1); continue; }
+                            s.x += s.vx;
+                            s.y += s.vy;
+                            s.vy += 0.025;                          // gravity: flakes settle
+                            s.vx *= 0.985;
+                            s.rot += s.vr;
+                            var glint = 0.55 + 0.45 * Math.sin(t * 9 + s.tw);   // shimmer
+                            ctx.save();
+                            ctx.translate(s.x, s.y);
+                            ctx.rotate(s.rot);
+                            ctx.fillStyle = 'rgba(232, 189, 96, ' + (s.life * glint * 0.9) + ')';
+                            var d = s.size * (0.5 + s.life * 0.5);
+                            ctx.fillRect(-d / 2, -d / 2, d, d);
+                            if (glint > 0.85) {                     // bright facet catch
+                                ctx.fillStyle = 'rgba(255, 240, 200, ' + (s.life * 0.8) + ')';
+                                ctx.fillRect(-d / 4, -d / 4, d / 2, d / 2);
+                            }
+                            ctx.restore();
+                        }
+                    }
+
                     function wave(baseY, amp, freq, speed, alpha, tOff) {
                         ctx.beginPath();
                         for (var x = 0; x <= W; x += 3) {
@@ -441,6 +499,8 @@
                             ctx.fillStyle = 'rgba(230, 205, 160, ' + (0.10 + 0.22 * m.depth * twinkle) + ')';
                             ctx.fill();
                         }
+
+                        drawSparks();
                     }
 
                     function loop() {
