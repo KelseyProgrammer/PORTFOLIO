@@ -200,7 +200,10 @@
                 <article id="intro">
                     <h2 class="major">Who I am</h2>
                     <button class="close-btn"></button>
-                    <span class="image main"><img src="images/pic02.jpeg" alt="" /></span>
+                    <div class="bio-scope">
+                        <canvas id="bio-scope-canvas" aria-hidden="true"></canvas>
+                        <span class="bio-scope-label">input: music &nbsp;&middot;&nbsp; output: software</span>
+                    </div>
                     <p>Hi, I'm Christopher Ament.</p>
 
                     <p>For years, I built things and made art, searching for that elusive feeling of being fully realized. I found it in code.</p>
@@ -208,21 +211,14 @@
                     <p>There's an intoxicating energy in being around someone who is doing exactly what they're meant to do. For me, that moment of clarity arrived not in a studio, but at a keyboard. The logic, the creativity, the act of building from nothing—it was the missing piece. Nothing has ever felt more right.</p>
 
                     <p>Now, as a full-stack developer, I channel that certainty into crafting clean, purposeful web applications. When I'm not coding, I'm still creating—usually as a musician and audio engineer, or enjoying the beautiful chaos of being a husband and father.</p>
-                    <form action="resume.pdf">
-                        <input type="submit" value="Resume">
-                    </form>
-                    <button id="toggle-approach">Read My Approach</button>
-                </article>
 
-                <!-- Second Article -->
-                <article id="approach" style="display: none;">
-                    <h2 class="major">My Approach</h2>
-                    <button class="close-btn"></button>
-                    <p>My approach to software development is centered around creating efficient, scalable, and user-friendly applications. I believe in writing clean, maintainable code and following best practices to ensure the longevity and success of the projects I work on.
+                    <ul class="principles">
+                        <li><span>Build</span>Clean, maintainable code and purposeful applications built to last.</li>
+                        <li><span>Collaborate</span>The best solutions come from diverse perspectives and open dialogue.</li>
+                        <li><span>Learn</span>Always expanding the toolkit — the next challenge is the point.</li>
+                    </ul>
 
-                    Collaboration and communication are key components of my workflow. I enjoy working with cross-functional teams and believe that the best solutions come from diverse perspectives and open dialogue.
-
-                    Continuous learning and improvement are also important to me. I stay up-to-date with the latest technologies and trends in the industry, and I am always looking for opportunities to expand my skill set and take on new challenges.</p>
+                    <a class="button" href="resume.pdf">Resume</a>
                 </article>
 
                 <!-- Work Article -->
@@ -476,16 +472,101 @@
                 })();
             </script>
             <script>
-                document.getElementById('toggle-approach').addEventListener('click', function() {
-                    var approachArticle = document.getElementById('approach');
-                    if (approachArticle.style.display === 'none') {
-                        approachArticle.style.display = 'block';
-                        this.textContent = 'Hide My Approach';
-                    } else {
-                        approachArticle.style.display = 'none';
-                        this.textContent = 'Read My Approach';
+                // Bio oscilloscope: idle breathing wave; follows the cursor on hover
+                (function() {
+                    if (location.search.indexOf('noanim') !== -1) return;
+                    var box = document.querySelector('.bio-scope');
+                    var canvas = document.getElementById('bio-scope-canvas');
+                    if (!box || !canvas) return;
+                    var ctx = canvas.getContext('2d');
+                    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    var W, H, dpr, t = 0, running = true;
+                    var amp = 0.3, freq = 2.2, targetAmp = 0.3, targetFreq = 2.2;
+                    var hover = false;
+
+                    function resize() {
+                        dpr = Math.min(window.devicePixelRatio || 1, 2);
+                        W = box.clientWidth;
+                        H = box.clientHeight;
+                        canvas.width = W * dpr;
+                        canvas.height = H * dpr;
+                        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
                     }
-                });
+                    resize();
+                    window.addEventListener('resize', resize);
+
+                    box.addEventListener('pointermove', function(e) {
+                        var r = box.getBoundingClientRect();
+                        hover = true;
+                        targetFreq = 1 + ((e.clientX - r.left) / r.width) * 7;      // pitch: left low, right high
+                        targetAmp = 0.15 + (1 - (e.clientY - r.top) / r.height) * 0.75; // gain: up loud, down quiet
+                    });
+                    box.addEventListener('pointerleave', function() {
+                        hover = false;
+                        targetAmp = 0.3;
+                        targetFreq = 2.2;
+                    });
+
+                    function draw() {
+                        ctx.clearRect(0, 0, W, H);
+                        // scope grid
+                        ctx.strokeStyle = 'rgba(233, 218, 189, 0.06)';
+                        ctx.lineWidth = 1;
+                        var gx = W / 12, gy = H / 6;
+                        for (var i = 1; i < 12; i++) { ctx.beginPath(); ctx.moveTo(i * gx, 0); ctx.lineTo(i * gx, H); ctx.stroke(); }
+                        for (var j = 1; j < 6; j++) { ctx.beginPath(); ctx.moveTo(0, j * gy); ctx.lineTo(W, j * gy); ctx.stroke(); }
+                        // center hairline
+                        ctx.strokeStyle = 'rgba(233, 218, 189, 0.12)';
+                        ctx.beginPath(); ctx.moveTo(0, H / 2); ctx.lineTo(W, H / 2); ctx.stroke();
+
+                        amp += (targetAmp - amp) * 0.06;
+                        freq += (targetFreq - freq) * 0.06;
+                        var breathe = hover ? 1 : (1 + Math.sin(t * 0.5) * 0.3);
+                        var A = amp * breathe * H * 0.34;
+
+                        // echo trace
+                        ctx.strokeStyle = 'rgba(217, 164, 65, 0.18)';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        for (var x = 0; x <= W; x += 2) {
+                            var u = x / W;
+                            var y = H / 2 + Math.sin(u * freq * Math.PI * 2 + (t - 0.35) * 2.2) * A * Math.sin(Math.PI * u);
+                            if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+                        }
+                        ctx.stroke();
+
+                        // main trace
+                        ctx.strokeStyle = 'rgba(217, 164, 65, 0.85)';
+                        ctx.lineWidth = 1.5;
+                        ctx.shadowColor = 'rgba(217, 164, 65, 0.45)';
+                        ctx.shadowBlur = 6;
+                        ctx.beginPath();
+                        for (var x2 = 0; x2 <= W; x2 += 2) {
+                            var u2 = x2 / W;
+                            var y2 = H / 2
+                                + Math.sin(u2 * freq * Math.PI * 2 + t * 2.2) * A * Math.sin(Math.PI * u2)
+                                + Math.sin(u2 * freq * 6.3 * Math.PI + t * 3.1) * A * 0.12;
+                            if (x2 === 0) ctx.moveTo(x2, y2); else ctx.lineTo(x2, y2);
+                        }
+                        ctx.stroke();
+                        ctx.shadowBlur = 0;
+                    }
+
+                    function loop() {
+                        if (running) { t += 0.016; draw(); }
+                        requestAnimationFrame(loop);
+                    }
+
+                    if (reduceMotion) {
+                        draw();
+                        box.addEventListener('pointermove', draw);
+                    } else {
+                        new IntersectionObserver(function(entries) {
+                            running = entries[0].isIntersecting;
+                        }, { threshold: 0.05 }).observe(box);
+                        loop();
+                    }
+                })();
             </script>
         </div>
     </body>
