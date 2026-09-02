@@ -504,7 +504,11 @@
                     }
 
                     function loop() {
-                        if (running) { t += 0.016; draw(); }
+                        if (running) {
+                            if (header.offsetWidth !== W || header.offsetHeight !== H) resize();
+                            t += 0.016;
+                            draw();
+                        }
                         if (!reduceMotion) requestAnimationFrame(loop);
                     }
 
@@ -613,13 +617,19 @@
                     }
 
                     function loop() {
-                        if (running) { t += 0.016; draw(); }
+                        if (running) {
+                            // self-heal: layout may not have been ready at load
+                            if (box.clientWidth !== W || box.clientHeight !== H) resize();
+                            t += 0.016;
+                            draw();
+                        }
                         requestAnimationFrame(loop);
                     }
 
                     if (reduceMotion) {
+                        resize();
                         draw();
-                        box.addEventListener('pointermove', draw);
+                        box.addEventListener('pointermove', function() { resize(); draw(); });
                     } else {
                         new IntersectionObserver(function(entries) {
                             running = entries[0].isIntersecting;
