@@ -199,7 +199,6 @@
                 <!-- Intro Article -->
                 <article id="intro">
                     <h2 class="major">Who I am</h2>
-                    <button class="close-btn"></button>
                     <div class="bio-scope">
                         <canvas id="bio-scope-canvas" aria-hidden="true"></canvas>
                         <span class="bio-scope-label">input: music &nbsp;&middot;&nbsp; output: software</span>
@@ -523,14 +522,28 @@
                             running = running && !document.hidden;
                             if (!document.hidden) running = true;
                         });
-                        // Gentle parallax: hero recedes slower than the page scrolls
+                        // Gentle parallax: hero recedes slower than the page scrolls.
+                        // Stands down while an article overlay is open so closing
+                        // never returns to a hidden landing page.
+                        function resetHeader() {
+                            header.style.transform = '';
+                            header.style.opacity = '';
+                            scrollY = 0;
+                        }
                         window.addEventListener('scroll', function() {
+                            if (document.body.classList.contains('is-article-visible')) return;
                             scrollY = window.pageYOffset;
                             if (scrollY < window.innerHeight * 1.2) {
                                 header.style.transform = 'translateY(' + scrollY * 0.3 + 'px)';
                                 header.style.opacity = Math.max(0, 1 - scrollY / (window.innerHeight * 0.9));
                             }
                         }, { passive: true });
+                        window.addEventListener('hashchange', function() {
+                            if (!location.hash || location.hash === '#') resetHeader();
+                        });
+                        document.addEventListener('click', function(e) {
+                            if (e.target.closest && e.target.closest('.close')) resetHeader();
+                        });
                         loop();
                     }
                 })();

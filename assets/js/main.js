@@ -52,20 +52,6 @@
 			}).triggerHandler('resize.flexbox-fix');
 
 		}
-		// CLOSE BUTTON FUNCTIONALITY
-		document.addEventListener('DOMContentLoaded', function () {
-			// Add close buttons to all articles
-			const articles = document.querySelectorAll('#main article');
-			articles.forEach(article => {
-				const closeBtn = document.createElement('div');
-				closeBtn.classList.add('close-btn');
-				closeBtn.innerHTML = '×'; // Close icon
-				closeBtn.addEventListener('click', () => {
-					window.location.href = '#'; // Return to homepage
-				});
-				article.appendChild(closeBtn);
-			});
-		});
 	// Nav.
 		var $nav = $header.children('nav'),
 			$nav_li = $nav.find('li');
@@ -392,17 +378,6 @@
 					}
 
 			});
-			// close button
-			document.addEventListener('DOMContentLoaded', function() {
-				// Add event listeners to all close buttons
-				document.querySelectorAll('.close-btn').forEach(function(button) {
-					button.addEventListener('click', function() {
-						// Hide the article when the close button is clicked
-						this.closest('article').style.display = 'none';
-					});
-				});
-			});
-		
 		// Improved scroll behavior - prevent unwanted scrolling
 			if ('scrollRestoration' in history)
 				history.scrollRestoration = 'manual';
