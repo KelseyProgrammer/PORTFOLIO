@@ -25,7 +25,7 @@ resume, portfolio, and GitHub so every touchpoint tells the same story.
 >
 > I'm looking to bring that product-shipping discipline to a full-time engineering team. If you want an engineer who has carried products from first commit to paying-customer infrastructure, let's talk.
 >
-> chrisament45@gmail.com · christopherament.netlify.app · github.com/KelseyProgrammer
+> Juanditobandito88@gmail.com · christopherament.netlify.app · github.com/KelseyProgrammer
 
 ---
 

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-26T02:23:01.711Z",
+        "reason": "Committed warm-darkroom gold-glow design language (commit 46c545e, DESIGN-PRINCIPLES.md); intentional accent, not AI default"
+      }
+    ]
+  }
+}

@@ -2,7 +2,7 @@
 
 **Full-Stack Engineer — React · TypeScript · Node.js · C++**
 
-St. Augustine, FL · (954) 909-6199 · chrisament45@gmail.com
+St. Augustine, FL · (954) 909-6199 · Juanditobandito88@gmail.com
 [christopherament.netlify.app](https://christopherament.netlify.app) · [github.com/KelseyProgrammer](https://github.com/KelseyProgrammer) · [linkedin.com/in/christopher-ament](https://www.linkedin.com/in/christopher-ament/)
 
 Full-stack engineer who ships products end-to-end: three audio plugins launched at [amentaudio.com](https://amentaudio.com) (C++/JUCE with a TypeScript storefront), the customer platform for a licensed smart-home installation business, and client web applications. Looking to bring that product-shipping discipline to a full-time engineering team.
