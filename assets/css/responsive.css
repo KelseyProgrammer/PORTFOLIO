@@ -82,7 +82,7 @@ img, video {
         height: 2.5rem;
         line-height: 2.5rem;
         padding: 0 0.75rem;
-        font-size: 0.8rem;
+        font-size: max(11px, 0.8rem);
     }
     
     .fa-2x {
@@ -99,8 +99,8 @@ img, video {
     #header nav ul li a {
         height: 2rem;
         line-height: 2rem;
-        padding: 0 0.5rem;
-        font-size: 0.7rem;
+        padding: 0 0.75rem;
+        font-size: max(11px, 0.7rem);
     }
 }
 

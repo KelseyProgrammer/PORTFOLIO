@@ -1498,7 +1498,7 @@ a:hover {
 
 #header .content .inner h1 {
 	font-family: var(--mono);
-	font-size: 0.75rem;
+	font-size: max(11px, 0.75rem);
 	font-weight: 400;
 	letter-spacing: 0.45em;
 	text-transform: uppercase;
@@ -1590,7 +1590,7 @@ a:hover {
 	line-height: 2.75rem;
 	padding: 0 1.25rem;
 	font-family: var(--mono);
-	font-size: 0.7rem;
+	font-size: max(11px, 0.7rem);
 	font-weight: 400;
 	letter-spacing: 0.25em;
 	text-transform: uppercase;
@@ -1721,7 +1721,7 @@ a:hover {
 	left: 0.9rem;
 	bottom: 0.65rem;
 	font-family: var(--mono);
-	font-size: 0.62rem;
+	font-size: max(11px, 0.62rem);
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
 	color: rgba(233, 218, 189, 0.4);
@@ -1751,7 +1751,7 @@ a:hover {
 .principles li span {
 	flex: 0 0 7.5rem;
 	font-family: var(--mono);
-	font-size: 0.68rem;
+	font-size: max(11px, 0.68rem);
 	letter-spacing: 0.22em;
 	text-transform: uppercase;
 	color: var(--gold);
@@ -1878,7 +1878,7 @@ a:hover {
 #goals li h4::before {
 	content: counter(project, decimal-leading-zero) '  ';
 	font-family: var(--mono);
-	font-size: 0.7rem;
+	font-size: max(11px, 0.7rem);
 	font-weight: 400;
 	color: var(--gold);
 	letter-spacing: 0.1em;
@@ -1892,7 +1892,7 @@ a:hover {
 
 #goals .project-tags {
 	font-family: var(--mono);
-	font-size: 0.68rem;
+	font-size: max(11px, 0.68rem);
 	letter-spacing: 0.18em;
 	text-transform: uppercase;
 	color: var(--gold);
@@ -1931,7 +1931,7 @@ input[type="button"],
 	box-shadow: none;
 	color: var(--text) !important;
 	font-family: var(--mono);
-	font-size: 0.72rem;
+	font-size: max(11px, 0.72rem);
 	font-weight: 400;
 	letter-spacing: 0.22em;
 	text-indent: 0.22em; /* recenter: letter-spacing trails the last glyph */
@@ -1998,7 +1998,7 @@ textarea:focus {
 
 label {
 	font-family: var(--mono);
-	font-size: 0.7rem;
+	font-size: max(11px, 0.7rem);
 	letter-spacing: 0.2em;
 	text-transform: uppercase;
 	color: var(--muted);
@@ -2008,7 +2008,7 @@ label {
 
 @media screen and (max-width: 736px) {
 	#header .content { padding: 1.75rem 0.5rem; }
-	#header .content .inner h1 { font-size: 0.68rem; letter-spacing: 0.32em; }
+	#header .content .inner h1 { font-size: max(11px, 0.68rem); letter-spacing: 0.32em; }
 	#header .content .inner h2 { font-size: 2.3rem; }
 	#header .content .inner h3 { font-size: 1.02rem; }
 
@@ -2050,7 +2050,19 @@ ul.icons li a:hover { color: var(--gold); }
 	padding: 1.5rem;
 	text-align: center;
 	font-family: var(--mono);
-	font-size: 0.65rem;
+	font-size: max(10px, 0.65rem);
 	letter-spacing: 0.2em;
 	color: #59503f;
 }
+
+/* Projects -> Contact trail */
+.project-cta {
+	margin: 1.75rem 0 0.5rem;
+	font-family: var(--mono);
+	font-size: max(11px, 0.72rem);
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.project-cta a { color: var(--gold); border-bottom: none; }
+.project-cta a:hover { color: #e5b355; }

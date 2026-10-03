@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "jev": {
+      "source": "JZKK720/cubecloud-skills-bundle-kit",
+      "sourceType": "github",
+      "skillPath": "upstream/jev/SKILL.md",
+      "computedHash": "1a2a30c8783cbf600ebfb82c92cd50463ff3cfc2d7b911c29e04966c1b6fd897"
+    }
+  }
+}
