@@ -1831,8 +1831,8 @@ a:hover {
 	box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(217, 164, 65, 0.07);
 }
 
-#goals li:hover h4 { color: var(--gold); }
-#goals li:hover h4::before { color: #f0c368; }
+#goals li:hover h3 { color: var(--gold); }
+#goals li:hover h3::before { color: #f0c368; }
 #goals li:hover > a:first-child { border-color: var(--gold-soft); }
 #goals li:hover .project-tags { color: #e5b355; }
 
@@ -1864,7 +1864,7 @@ a:hover {
 	transform: scale(1.03);
 }
 
-#goals li h4 {
+#goals li h3 {
 	counter-increment: project;
 	font-size: 1.3rem;
 	font-weight: 700;
@@ -1875,7 +1875,7 @@ a:hover {
 	display: inline-block;
 }
 
-#goals li h4::before {
+#goals li h3::before {
 	content: counter(project, decimal-leading-zero) '  ';
 	font-family: var(--mono);
 	font-size: max(11px, 0.7rem);
@@ -1887,8 +1887,8 @@ a:hover {
 }
 
 #goals li a { border-bottom: none; }
-#goals .project-body > a:hover h4 { color: var(--gold); }
-#goals li h4 { transition: color 0.2s ease; }
+#goals .project-body > a:hover h3 { color: var(--gold); }
+#goals li h3 { transition: color 0.2s ease; }
 
 #goals .project-tags {
 	font-family: var(--mono);
@@ -2058,11 +2058,16 @@ ul.icons li a:hover { color: var(--gold); }
 /* Projects -> Contact trail */
 .project-cta {
 	margin: 1.75rem 0 0.5rem;
+	font-size: 0.95rem;
+	color: var(--muted);
+}
+.project-cta a {
+	color: var(--gold);
+	border-bottom: none;
 	font-family: var(--mono);
 	font-size: max(11px, 0.72rem);
 	letter-spacing: 0.18em;
 	text-transform: uppercase;
-	color: var(--muted);
+	margin-left: 0.35rem;
 }
-.project-cta a { color: var(--gold); border-bottom: none; }
 .project-cta a:hover { color: #e5b355; }

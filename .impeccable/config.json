@@ -11,6 +11,30 @@
         ],
         "createdAt": "2026-10-03T00:32:15.253Z",
         "reason": "user confirmed: gold-glow hover is the committed warm-darkroom/gold signal design language (commit 46c545e, chosen via user feedback rounds)"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-03T00:47:35.123Z",
+        "reason": "user confirmed: uppercase mono micro-label motif (project tag lists, bio label) is the committed warm-darkroom design language; flagged strings are dot-separated short labels, not prose"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-03T00:47:35.221Z",
+        "reason": "false positive: nav link text is inset via line-height/link padding inside bordered ul/li; bio-scope is an oscilloscope bezel where the canvas intentionally fills the frame"
+      },
+      {
+        "rule": "overused-font",
+        "value": "geist mono",
+        "createdAt": "2026-10-03T00:47:35.322Z",
+        "reason": "user confirmed: Geist Mono is the committed accent face for micro-labels (design-language memory; primary face is licensed Satoshi)"
       }
     ]
   }
